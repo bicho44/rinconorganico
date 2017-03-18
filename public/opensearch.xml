@@ -1,0 +1,6 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Rincon Organico</ShortName>
+  <Description>Busqueda en el Rincon Organico</Description>
+  <Tags>El Rincon Organico</Tags>
+  <Url type="text/html" template="http://www.google.com/search?q=site:www.site.com {searchTerms}"/>
+</OpenSearchDescription>

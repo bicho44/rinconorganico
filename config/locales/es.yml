@@ -1,0 +1,287 @@
+es:
+  time:
+    formats:
+      # short: "%b %d"
+      long: "%D"
+
+  activemodel:
+    errors:
+      messages:
+        blank: "no puede estar en blanco"
+  activerecord:
+    models:
+      category:
+        one: "Categoria"
+        other: "Categorias"
+      certification:
+        one: "Certificacion"
+        other: "Certificaciones"
+      recipe:
+        one: "Receta"
+        other: "Recetas"
+      note:
+        one: "Nota"
+        other: "Notas"
+      order:
+        one: "Pedido"
+        other: "Pedidos"
+      producer:
+        one: "Productor"
+        other: "Productores"
+      product:
+        one: 'Producto'
+        other: 'Productos'
+      testimony:
+        one: "Testimonio"
+        other: "Testimonios"
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+    attributes:
+      certification:
+        title: 'Titulo'
+        description: 'Descripción'
+        picture: 'Foto'
+        created_at: 'Creado'
+        updated_at: 'Actualizado'
+        slug: 'Url'
+      note:
+        title: 'Titulo'
+        description: 'Descripción'
+        picture: 'Foto'
+        type: 'Tipo'
+        created_at: 'Creado'
+        updated_at: 'Actualizado'
+        slug: 'Url'
+        published: 'Publicado'
+        is_featured: 'Destacado'
+        types:
+          bar: 'Bar'
+          catering: 'Catering'
+          blog: 'Notas FB'
+          medium: 'Prensa'
+      order:
+        email: "Email"
+        first_name: "Nombre"
+        last_name: "Apellido"
+        phone: "Telefono"
+        cellular: "Celular"
+        shipping_address: "Dirección"
+        city: "Ciudad"
+        district: "Barrio"
+        postal_code: "Codigo Postal"
+        company: "Razón Social"
+        cuit: "CUIT"
+        created_at: "Creada"
+        comments: "Comentarios"
+      product:
+        title: 'Titulo'
+        category: 'Categoría'
+        producer: 'Productor'
+        description: 'Descripción'
+        picture: 'Foto'
+        measure: 'Medida'
+        created_at: 'Creado'
+        updated_at: 'Actualizado'
+        published: 'Publicado'
+        publish: 'Publicar'
+        price: 'Precio'
+        slug: 'Url'
+        is_featured: 'Destacado'
+        is_sale: 'En oferta'
+      testimony:
+        title: 'Titulo'
+        description: 'Descripción'
+        picture: 'Foto'
+        created_at: 'Creado'
+        updated_at: 'Actualizado'
+      recipe:
+        title: 'Titulo'
+        description: 'Descripción'
+        picture: 'Foto'
+        created_at: 'Creado'
+        updated_at: 'Actualizado'
+        cookings: 'Ingredientes'
+      category:
+        title: 'Titulo'        
+        created_at: 'Creado'
+        updated_at: 'Actualizado'
+        slug: 'Url'
+      user:
+        email: "Correo electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmar contraseña"
+        current_password: "Contraseña actual"
+        remember_me: "Recordarme"
+        first_name: "Nombre"
+        last_name: "Apellido"
+        phone: "Telefono"
+        cellular: "Celular"
+        shipping_address: "Dirección"
+        city: "Ciudad"
+        district: "Barrio"
+        postal_code: "Codigo Postal"
+        company: "Razón Social"
+        cuit: "CUIT"
+
+    errors:
+      models:
+        order:
+          attributes:
+            first_name:
+              blank: "El nombre no puede estar en blanco"
+            last_name:
+              blank: "El apellido no puede estar en blanco"
+            phone:
+              blank: "El teléfono no puede estar en blanco"
+            cellular:
+              blank: "El celular no puede estar en blanco"
+            shipping_address:
+              blank: "La direccion de envio no puede estar en blanco"
+            district:
+              blank: "El barrio no puede estar en blanco"
+            postal_code:
+              blank: "El código postal no puede estar en blanco"
+            city:
+              blank: "La ciudad no puede estar en blanco"
+            email:
+              blank: "El email no puede estar en blanco"
+              invalid: "El email es invalido"
+        user:
+          attributes:
+            email:
+              blank: "La dirección de correo electrónico no puede estar vacia."
+              taken: "La dirección de correo electrónico ya existe."
+              invalid: "La dirección de correo electrónico es inválida."
+            password:
+              blank: "Ingrese una contraseña"
+              confirmation: "Las contraseñas no coinciden"
+            password_confirmation:
+              blank: "Confirme la contraseña"
+            current_password:
+              blank: "Debe confirmar su contraseña"
+              invalid: "La contraseña ingresada es inválida"
+            first_name:
+              blank: "Indique su nombre"
+            last_name:
+              blank: "Indique su apellido"
+
+  active_admin:
+    dashboard: Inicio
+    dashboard_welcome:
+      welcome: "Bienvenido a Active Admin. Esta es la página de inicio predeterminada."
+      call_to_action: "Para agregar secciones edite 'app/admin/dashboard.rb'"
+    view: "Ver"
+    edit: "Editar"
+    delete: "Eliminar"
+    delete_confirmation: "¿Está seguro de que quiere eliminar esto?"
+    new_model: "Añadir %{model}"
+    create_model: "Añadir %{model}"
+    edit_model: "Editar %{model}"
+    update_model: "Editar %{model}"
+    delete_model: "Eliminar %{model}"
+    details: "Detalles de %{model}"
+    cancel: "Cancelar"
+    empty: "Vacío"
+    previous: "Anterior"
+    next: "Siguiente"
+    download: "Descargar:"
+    has_many_new: "Agregar Añadir %{model}"
+    has_many_delete: "Eliminar"
+    has_many_remove: "Quitar"
+    filters:
+      buttons:
+        filter: "Filtrar"
+        clear: "Quitar Filtros"
+      predicates:
+        contains: "Contiene"
+        equals: "Igual a"
+        starts_with: "Empieza con"
+        ends_with: "Termina con"
+        greater_than: "Mayor que"
+        less_than: "Menor que"
+    main_content: "Por favor implemente %{model}#main_content para mostrar contenido."
+    logout: "Salir"
+    powered_by: "Powered by %{active_admin} %{version}"
+    sidebars:
+      filters: "Filtros"
+    pagination:
+      empty: "No se han encontrado %{model}"
+      one: "Mostrando <b>1</b> %{model}"
+      one_page: "Mostrando <b>un total de %{n}</b> %{model}"
+      multiple: "Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de un total de <b>%{total}</b>"
+      multiple_without_total: "Mostrando %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b>"
+    blank_slate:
+      content: "No hay %{resource_name} aún."
+      link: "Añadir"
+      entry:
+        one: "registro"
+        other: "registros"
+    any: "Cualquiera"
+    batch_actions:
+      button_label: "Acciones en masa"
+      default_confirmation: "¿Seguro que quieres hacer esto?"
+      delete_confirmation: "Eliminar %{plural_model}: ¿Está seguro?"
+      succesfully_destroyed:
+        one: "Se ha destruido 1 %{model} con éxito"
+        other: "Se han destruido %{count} %{plural_model} con éxito"
+      selection_toggle_explanation: "(Cambiar selección)"
+      link: "Añadir"
+      action_label: "%{title} seleccionado"
+      labels:
+        destroy: "Borrar"
+        publish: "Publicar"
+        unpublish: "Despublicar"
+    comments:
+      body: "Cuerpo"
+      author: "Autor"
+      title: "Comentario"
+      add: "Comentar"
+      resource: "Recurso"
+      no_comments_yet: "Aún sin comentarios."
+      title_content: "Comentarios (%{count})"
+      errors:
+        empty_text: "El comentario no fue guardado, el texto estaba vacío."
+    devise:
+      login:
+        title: "iniciar sesión"
+        remember_me: "Recordarme"
+        submit: "iniciar sesión"
+      reset_password:
+        title: "¿Olvidó su contraseña?"
+        submit: "Restablecer mi contraseña"
+      change_password:
+        title: "Cambie su contraseña"
+        submit: "Cambiar mi contraseña"
+      links:
+        sign_in: "registrarse"
+        forgot_your_password: "¿Olvidó su contraseña?"
+        sign_in_with_omniauth_provider: "Conéctate con %{provider}"
+  views:
+      pagination:
+          truncate: "..."
+          first: "Inicio"
+          previous: "Anterior"
+          next: "Siguiente"
+          last: "Último"
+  formtastic:
+    yes: "Sí"
+    no: "No"
+    create: "Guardar %{model}"
+    update: "Guardar %{model}"
+    submit: "Aceptar"
+    cancel: "Cancelar"
+    reset: "Restablecer %{model}"
+    required: "requerido"
+  errors:
+    messages:
+      already_confirmed: "Ya está confirmada, por favor intente ingresar."
+      confirmation_period_expired: "Necesita ser confirmado con %{period}, por favor pida uno nuevo."
+      expired: "Ha expirado, por favor pida uno nuevo."
+      not_found: "No fue encontrado."
+      not_locked: "No está bloqueada."
+      not_saved:
+        one: "1 error evitó que este %{resource} fuera guardado:"
+        other: "%{count} errores evitaron que este %{resource} fuera guardado:"
+
+  login_necessary_for_checkout: "Tienes que inciar sesión para completar el pedido."

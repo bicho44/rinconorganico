@@ -1,0 +1,23 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: rinconorganico_development
+  username: xxxx
+  password: xxxx
+  socket: /tmp/mysql.sock
+
+test: &test
+  adapter: mysql2
+  encoding: utf8
+  database: rinconorganico_test
+  username: xxxx
+  password: xxxx
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: rinconorganico_production
+  username: xxxx
+  password: xxxx
+  socket: /var/run/mysqld/mysqld.sock
