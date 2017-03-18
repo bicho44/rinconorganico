@@ -1,0 +1,6 @@
+<h1 class="l-title"> Suscribite a nuestro newsletter semanal con todas las novedades </h1>
+
+<%= semantic_form_for @newsletter_subscription do |f| %>
+    <%= f.input :email, label: 'Email'%>
+    <%= f.submit :"Suscribirme" %>
+<% end %>

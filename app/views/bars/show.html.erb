@@ -1,0 +1,10 @@
+<% content_for(:title) do %>
+  <%= @note.title %>
+<% end %>
+
+<%= render partial: '/shared/note', locals: {:note => @note} %>
+<%= link_to 'Ir al biobar cultural', bars_path, :class => 'l-bottom-link' %>
+
+<% content_for :right_banner do %>
+  <%= render 'bars/rightbanner' %>
+<% end %>

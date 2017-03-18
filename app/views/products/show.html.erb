@@ -1,0 +1,61 @@
+<%# content_for :slider do %>
+  <%# first_slide = render partial: '/categories/featured_product_banner', locals: {product: Product.first}%>
+  <%# carousel(sliders: [first_slide]) %>
+<%# end %> 
+
+<% content_for(:title) do %>
+  <%= @product.title %>
+<% end %>
+
+<div class="l-row category-header">
+  <%= render partial: '/categories/breadcrumbs', locals: {categories: @product.category.ancestors+[@category]}%>
+  <%= render partial: '/categories/menu', locals: {categories: @categories} %>
+</div>
+
+<div class="product-details">
+  <div class="slat-product">
+    <div class="photo-product photo-product-small">
+      <div class="watermark <%= @product.is_sale ? 'on_sale' : 'green' %>"></div>
+      <% if @product.picture.present? %>
+      <%= link_to(raw(image_tag(@product.picture.thumb('288x237'), size:'288x237')), p) %>
+      <% else %>
+      <%= image_tag @product.picture.default_url, size:'288x237' %>
+      <% end %>
+      <div class="price"> <%= number_to_currency(@product.price) %></div>
+    </div>
+    <p class="title"><%= @product.title %></p>
+    <p class="measure"><%= @product.measure %></p>
+    <%= form_for @product.cart_items.build do |f| %>
+      <%= f.hidden_field :product_id %>
+      <button class="add-to-basket"> Agregar <span class="icon"></span><br />a mi canasta </button>
+    <% end %>
+    
+    <% unless @product.description.empty? %>
+    <p class="description">DESCRIPCIÓN: <%= @product.description %> </p>
+    <% end %>
+  </div>
+</div>
+
+<div class="related-stuff">
+<% unless @product.recipes.empty? %>
+  <h3 class="title">Recetas relacionadas: </h3>
+  <% @product.recipes.each do |r| %>
+    <%= link_to r.title, r %><br>
+  <% end %>
+<% end %>
+</div>
+
+<div class="related-stuff">
+<% unless @product.producer.blank? %>
+  <h3 class="title">Productor: <h3>
+  <% if @product.producer %>
+    <%= link_to @product.producer.title, @product.producer %><br>
+  <% end %>
+<% end %>
+</div>
+
+<% content_for :right_banner do %>
+  <%= sidebanner_join(
+    recipe_banner_slats(4)
+  )%>
+<% end %>

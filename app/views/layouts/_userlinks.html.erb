@@ -1,0 +1,23 @@
+<div class="l-menu l-userlinks l-lefty">
+  <ul>
+    <li>
+      <%= link_to 'http://www.facebook.com/elrinconorganico', :target => "_blank" do %><%= raw('elrinconorganico') %><span class="icon facebook"></span><% end %>
+    </li>
+    <li>
+    <% if user_signed_in? %>
+      <%= current_user.email %> |
+      <%= link_to 'Mi perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to current_cart_path, :class => 'navbar-link basket' do %>
+        <%= raw('Mi canasta') %> (<%= current_cart.total_items %>)
+      <% end %> |
+      <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% else %>
+      <%= link_to current_cart_path, :class => 'navbar-link basket' do %>
+        <%= raw('Mi canasta') %> (<%= current_cart.total_items %>)
+      <% end %> |
+      <%= link_to "Registrate", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Ingresar", new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
+    </li>
+  </ul>
+</div>

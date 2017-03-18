@@ -1,0 +1,28 @@
+<% content_for(:title) do %>
+  <%= @note.title %>
+<% end %>
+
+<%= render partial: '/shared/note', locals: {:note => @note, twocolumn: true} %>
+<br>
+<h3 class="l-title"> Notas relacionadas </h3>  
+<div class="l-stacked">
+<% @note.related.each do |note| %>
+  <div class="related-note">
+    <div class="title"> <%= link_to note.title, post_path(note) %> </div>
+    <div class="description">
+      <%= truncate_html(note.description, length: 120, omission: '...') %>
+    </div>
+    <%= link_to 'Leer más...', post_path(note), :class=>'more' %>
+  </div>
+<% end %>
+</div>
+
+
+<% content_for :slider do %>
+  <% featured_note =  Banner.current.blog_banner || Note.blog.first %>
+  <% sliders = [] %>
+  <% sliders << render(partial: '/posts/featured_note_banner', locals: {note: featured_note}) if featured_note%>
+  <% carousel(sliders: sliders) %>
+<% end %> 
+
+

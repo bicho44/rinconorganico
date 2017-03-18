@@ -1,0 +1,49 @@
+<% content_for :slider do %>
+  <div class="banner note">
+    <%= image_tag asset_path('content/certificaciones/header.jpg'), :class => 'background' %>
+    <h2><span>Almacén Orgánico</span></h2>
+  </div>
+<% end %> 
+
+<% content_for(:title) do %>
+  Almacén Orgánico
+<% end %>
+
+<div class="slat slat-shadow white">
+  <div class="article">
+    <div class='title'>Almacén Orgánico</div>
+    <div class="description"> 
+      <p>
+        Si quieren conocer nuestros productos, los invitamos a visitar nuestro almacén, en Bulnes 910, esquina Guardia Vieja, Capital Federal.
+      </p>
+      <p>
+        En el almacén de El Rincón Orgánico, podrán elegir entre una amplia variedad de productos envasados y frescos de alta calidad orgánica, por ejemplo, verduras, frutas, pollos, lácteos, quesos, productos de soja, aceites, cereales, semillas, frutos secos, harinas, vinos, mieles, dulces y jugos. Nuestro BioBar también ofrece panificados y repostería caseros.
+      </p>
+      <p>
+        El equipo de El Rincón Orgánico los ayudará a encontrar el producto que buscan. Además, les explicará los beneficios de cada alimento, que podrán disfrutar en los platos elaborados en nuestro BioBar.
+      </p>
+      <p>
+        Después de muchos años de dedicación, establecimos una red de productores y procesadores provenientes de distintas partes de Latinoamérica. Trabajamos con productos ciento por ciento orgánicos de pequeños y grandes productores, y fomentamos y acompañamos el desarrollo de nuevos proyectos. Para nosotros, la transparencia en cada eslabón del proceso es un valor central, como la calidad y la justicia social.
+      </p>
+      <h3>Un poco de historia:</h3>
+      <p>
+        En 1996, El Rincón Orgánico abrió sus puertas a la calle, dado que desde 1989 solo brindaba el servicio de delivery a domicilio. La idea era tomar contacto directo con el consumidor y ofrecerle un espacio en el que pudiera preguntar y asesorase. En ese momento, El Rincón Orgánico vivió su primera experiencia de BioBar, con unas mesitas que invitaban a los visitantes a degustar y a conocer los productos, mientras compartían un ámbito de deleite y esparcimiento.
+      </p>
+      <h3>Hoy</h3>
+      <p>
+        Uniendo a productores de todos los rincones del país en una esquina de Almagro, El Rincón Orgánico expone un amplio abanico de productos orgánicos en la ciudad de Buenos Aires. Con un ambiente colorido y acogedor, el almacén ofrece únicamente productos ciento por ciento orgánicos.<br>
+        ¡Los esperamos!<br>
+        Dirección: Bulnes 910, esq. Guardia Vieja, Almagro. Horario: De lunes a sábado, de 11.00 a 20.00. Teléfonos: 2062.9515 / 2062.2230.
+      </p>
+    </div>
+  </div>
+</div>
+
+<% content_for :right_banner do %>
+  <%= sidebanner_join(
+    testimonial_banner_slats(1) <<
+    certification_banner_slats(1) <<
+    cv_banner_slats() <<
+    product_banner_slats(1)
+  )%>
+<% end %>

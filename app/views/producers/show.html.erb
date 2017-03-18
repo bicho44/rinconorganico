@@ -1,0 +1,14 @@
+<% content_for(:title) do %>
+  <%= @producer.title %>
+<% end %>
+
+<%= render partial: '/shared/note', locals: {:note => @producer, twocolumn: true} %>
+<%= link_to "Volver", :back, :class => 'l-bottom-link' %>
+
+<% content_for :slider do %>
+ <%= image_tag 'content/productores/productores.jpg' %>
+<% end %> 
+
+<% content_for :right_banner do %>
+  <%= render 'producers/rightbanner' %>
+<% end %>

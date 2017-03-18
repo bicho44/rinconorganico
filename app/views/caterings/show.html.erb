@@ -1,0 +1,23 @@
+<% content_for(:title) do %>
+  <%= @note.title %>
+<% end %>
+
+<div class="slat slat-shadow white">
+  <h1><%= @note.title %></h1>
+  <div class="article large l-twocolumns">
+    <div class="picture">
+      <%= image_tag @note.picture.thumb('200x120') %>
+      <div class="watermark"></div>
+    </div>
+    <div class="description"> <%= simple_format @note.description %> </div>
+  </div>
+</div>
+<%= link_to 'Ir a servicio de catering', caterings_path, :class => 'l-bottom-link' %>
+
+<% content_for :slider do %>
+ <%= image_tag 'content/catering/header.jpg' %>
+<% end %> 
+
+<% content_for :right_banner do %>
+  <%= render 'caterings/rightbanner' %>
+<% end %>

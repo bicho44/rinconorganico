@@ -1,0 +1,21 @@
+<% content_for :slider do %>
+ <%= image_tag 'content/prensa/banner.jpg' %>
+<% end %>	
+<% content_for :right_banner do %>
+ <%= image_tag 'content/prensa/sidebar.png' %>
+<% end %>	
+
+<% content_for(:title) do %>
+  Prensa
+<% end %>
+
+<h3 class="l-title">Prensa</h3>
+
+<div style="float:left; width: 601px">
+<% 3.times do %>
+	<%= link_to raw( image_tag 'content/prensa/nota.png' ), prensa_detalle_path%>
+<% end %>
+</div>
+<span style="float:left">
+	<%= image_tag 'content/prensa/favorites.png' %>
+</span>

@@ -1,0 +1,46 @@
+<% search_box(posts_path,'short') %>
+
+<% content_for(:title) do %>
+  Novedades
+<% end %>
+
+<h1 class="l-title"></h1>
+
+<div class="l-7030">
+  <div class="first">
+    <% @notes.each do |note| %>
+      <% seed_box 'narrow taller', 'summary white blog' do %>
+        <div class="date"> <%= note.created_at.strftime("%d/%m/%Y") %> </div>
+        <div class="title"> <%= link_to note.title, post_path(note) %> </div>
+        <% text_length = 600 %>
+        <% unless note.picture.blank? %>
+          <div class="picture"> <%= link_to(image_tag(note.picture.thumb('160xP120')), post_path(note)) %> </div>
+          <% text_length = 350 %>
+        <% end %>
+        <div class="description"> 
+          <%= truncate_html(note.description, length: 150, omission: '...') %>
+        </div>
+        <%= link_to 'Leer mas', post_path(note), class: 'more' %>
+      <%end %>
+    <% end %>
+  </div>
+
+  <div class="second">
+    <div class="l-title-secondary">Articulos mas leidos</div>
+    <% @more_read.each do |note| %>
+      <div class="related-note">
+        <div class="title"> <%= link_to note.title, post_path(note) %> </div>
+        <div class="description"> <%= truncate(strip_tags(note.description), length: 60) %>...</div>
+        <%= link_to 'Leer más...', post_path(note), :class=>'more' %>
+      </div>
+    <% end %>
+  </div>
+  <%= paginate @notes %>
+</div>
+
+<% content_for :slider do %>
+  <% featured_note =  Banner.current.blog_banner || Note.blog.first %>
+  <% sliders = [] %>
+  <% sliders << render(partial: '/posts/featured_note_banner', locals: {note: featured_note}) if featured_note%>
+  <% carousel(sliders: sliders) %>
+<% end %> 

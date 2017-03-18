@@ -1,0 +1,24 @@
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <% if (sliders.size > 1) %>
+      <% sliders.each_with_index do |slider,i| %>
+        <li data-target="#myCarousel" data-slide-to="<%=i %>" <%= 'class="active"' if i==0 %> ></li>
+      <% end %>
+    <% end %>
+  </ol>
+
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <% sliders.each_with_index do |slider,i| %>
+      <div class="<%= 'active ' if i==0 %>item">
+        <%= slider %>
+      </div>
+    <% end %>
+  </div>
+  
+  <!-- Carousel nav -->
+  <% if (sliders.size > 1) %>
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev"><i class="icon icon-chevron-left"></i></a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next"><i class="icon icon-chevron-right"></i></a>
+  <% end %>
+</div>

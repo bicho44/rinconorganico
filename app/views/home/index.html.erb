@@ -1,0 +1,101 @@
+<% content_for(:slider) do %>
+  <% carousel(images: ['content/home/banner.jpg']) %>
+<% end %>
+
+<% unless @products.empty? %>
+<h2 class="l-title-home"> Productos destacados </h2>
+<div class="l-home-products l-twocolumns l-white l-bottom-shadow">
+  <% @products.each do |p| %>
+    <div class="slat-product">
+      <div class="photo-product photo-product-small">
+        <div class="watermark green"></div>
+        <% if (p.picture.present?) %>
+        <%= link_to raw(image_tag(p.picture.thumb('184x151'), size:'184x151')), p %>
+        <% else %>
+        <%= link_to raw(image_tag(p.picture.default_url, size:'184x151')), p %>
+        <% end %>
+        <div class="price"> <%= number_to_currency(p.price) %></div>
+      </div>
+      <p class="title"><%= link_to p.title, p %></p>
+      <%= form_for p.cart_items.build do |f| %>
+        <%= select "cart_item", "quantity", (1..10) %>
+        <%= f.hidden_field :product_id %>
+        <button class="add-to-basket"> Agregar <span class="icon"></span><br />a mi canasta </button>
+      <% end %>
+      
+      <% unless p.description.empty? %>
+      <p class="description">DESCRIPCIÓN: <%= p.description %> </p>
+      <% end %>
+      <%= link_to(p, :class=>'more') do %>
+        Ver Más
+        <span class="icon"></span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<%= link_to 'Ver todos los productos', categories_path, class:"flap center l-bottom-shadow" %>
+<% end %>
+
+<!-- Talleres -->
+<% unless @posts.empty? %>
+<h2 class="l-title-home talleres"> Notas </h2>
+<% @posts.each do |p| %>
+<div class="poster talleres l-bottom-shadow">
+  <%= image_tag 'content/home/mock-talleres.png'%>
+  <div class="transparent-text">
+    <div class="title"><%= link_to p.title, post_path(p) %></div>
+    <div class="description"> 
+      <%= truncate_html(p.description, length: 150, omission: '...') %>
+    </div>
+    <%= link_to 'Ver más', post_path(p), class: 'more' %>
+  </div>
+</div>
+<% end %> 
+<% end %>
+
+<div class="home-links-bottom">
+  <div class="item">
+    <h3 class="title"> Servicios </h3>
+    <ul class="content">
+      <li class="more"> <span class="icon"></span> <%= link_to 'Delivery', delivery_path %> </li>
+      <li class="more"> <span class="icon"></span> <%= link_to 'Almacén orgánico', categories_path %> </li>
+      <li class="more"> <span class="icon"></span> <%= link_to 'Bar', bars_path %> </li>
+      <li class="more"> <span class="icon"></span> <%= link_to 'Catering', caterings_path %> </li>
+      <li class="more"> <span class="icon"></span> <%= link_to 'Departamento de exportación', exportacion_path %> </li>
+    </ul>
+  </div>
+  <div class="item">
+    <h3 class="title"> Recetas </h3>
+    <ul class="content">
+      <% @recipes.each do |r| %>
+        <li> <%= link_to r.title, r %> </li>
+      <% end %>
+      <li><%= link_to 'Ver todas', recipes_path, class: :more %> </li>
+    </ul>
+  </div>
+  <div class="item">
+    <h3 class="title"> Bio-bar </h3>
+    <div class="content">
+      Descargate y tentate con nuestros productos. Te esperamos!
+      <%= link_to raw(image_tag 'content/home/biobar.png'), bars_path %>
+    </div>
+  </div>
+  <% if @testimony %>
+    <div class="item">
+      <h3 class="title"> Testimonial </h3>
+      <div class="content">
+        <%= truncate_html(@testimony.description, length: 70, omission: '...') %>
+        <div class="author l-righty">
+          <%= @testimony.title %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%#= image_tag 'content/home/body.png' %>
+<% content_for :right_banner do %>
+  <%= sidebanner_join(
+    blog_banner_slats(3)
+  )%>
+<% end %> 

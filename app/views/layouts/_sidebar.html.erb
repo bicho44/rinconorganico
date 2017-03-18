@@ -1,0 +1,16 @@
+<aside class="l-sidebar" role="complementary">
+  <div class="contact-info">
+    <span class="geo"></span><a href="https://www.google.com/maps/place/Bulnes+910/@-34.6008699,-58.4178021,17z/data=!3m1!4b1!4m2!3m1!1s0x95bcca627dc2ba9d:0xf9a2ececc6bbd7fe" target="_blank">Bulnes 910, CABA</a><br>
+    <span class="mobile"></span>011 2062-9515
+  </div>
+  <% if content_for? :right_banner%>
+    <%= yield :right_banner %>
+  <% else %>
+    <%= sidebanner_join(
+      testimonial_banner_slats(1) <<
+      certification_banner_slats(1) <<
+      cv_banner_slats() <<
+      product_banner_slats(1)
+    )%>
+  <% end %>
+</aside>

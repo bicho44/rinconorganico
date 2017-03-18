@@ -1,0 +1,56 @@
+<% content_for(:title) do %>
+  Catering
+<% end %>
+
+<h1 class="l-title">Catering</h1>
+
+<div class="slat slat-shadow white">
+  <div class="article l-twocolumns">
+    <div class="title">Eventos de Catering</div>
+    <div class="description">
+      <h3>Biochef María Calzada - CEO de El Rincón Orgánico</h3>
+      <p>
+        Ofrecemos  un servicio de catering orgánico que se adecúa a las necesidades de la persona que lo solicita. Contamos con un amplio y variado abanico de  menúes, guiado por los productos de estación y los principios orgánicos. Apostamos a propuestas sabrosas, únicas ¡y preparadas para cada uno!
+      </p>
+      <p>
+        Estamos a su disposición para responder consultas y pedidos de presupuesto.<br>
+        Correo electrónico: info@elrinconorganico.com.ar. Teléfonos: 2062.9515/2062.2230.
+      </p>
+      <h3>Un poco de historia</h3>
+      <p>
+        En 1993, El Rincón Orgánico empezó a ofrecer su servicio de catering como respuesta a los pedidos de sus clientes que querían contar con una opción orgánica para sus eventos. Descubrimos  que un plato era una excelente manera de comunicar nuestra propuesta. Desde ese entonces, los caterings fueron evolucionando. El Rincón Orgánico ha participado en todo tipo de eventos, nacionales e internacionales, desde casamientos y reuniones de amigos o de negocios hasta conferencias con más de trescientos participantes. El eje siempre ha sido mostrar los productos orgánicos en su máximo esplendor, con todos sus sabores, aromas y colores como protagonistas del plato. 
+      </p>
+      <p>
+        Hemos organizado eventos y caterings para Greenpeace, tanto para sus campañas como para eventos especiales; para diversas embajadas; y para el muy querido Quino, entre otros. A El Rincón Orgánico le han solicitado organizar la cena oficial de BioFach, la feria internacional del mundo orgánico, en dos ocasiones; en ambos casos, ofrecimos delicioso platos orgánicos con espiritu argentino y latinoamericano. 
+      </p>
+      <p>
+        Asimismo, desde hace tres años participamos en diferentes eventos musicales y culturales, como el Hot Festival, el Festival Aire y FestEco, entre otros. Estuvimos presentes con  un stand de comida ciento por ciento orgánica, donde le ofrecimos una nueva y deliciosa opción a un nuevo público. 
+      </p>
+      <p>
+        Nos enorgullese que nos sigan eligiendo y que podamos seguir ofreciendo esta alternativa orgánica creando un ambiente único. Si quieren conocer todos nuestros eventos, pueden descargar el listado completo de nuestras participaciones con un clic aquí
+      </p>
+    </div>
+  </div>
+</div>
+
+<% colors= %w(red orange blue) %>
+<% @notes.zip(colors).each do |note, color| %>
+  <% seed_box "wide tall", "summary catering #{color} white" do %>
+    <div class="title"><%= note.title %></div>
+    <div class="picture"><%= image_tag(note.picture.thumb('212x110')) %> </div>
+    <div class="description">
+      <%= truncate_html(note.description, length: 150, omission: '...') %>
+    </div>
+    <%= link_to 'Contrataciones', catering_path(note), :class=>'more' %>
+  <% end %>
+<% end %>
+
+<%= paginate @notes %>
+
+<% content_for :slider do %>
+ <%= image_tag 'content/catering/header.jpg' %>
+<% end %> 
+
+<% content_for :right_banner do %>
+  <%= render 'caterings/rightbanner' %>
+<% end %>

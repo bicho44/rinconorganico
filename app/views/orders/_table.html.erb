@@ -1,0 +1,30 @@
+<div class="slat slat-shadow l-white cart-table">
+  <table class="checkout-table"> 
+    <thead>
+      <tr class="titles">
+        <th width="50"></tf>
+        <th width="350">Producto</th> 
+        <th>Cantidad</th> 
+        <th>Precio unit.</th> 
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_cart.cart_items.each do |item| %>
+        <tr class="content">
+          <td class="image">
+            <%= link_to item.product do %>
+              <div class="photo-product">
+                <%= image_tag(item.picture.thumb('40xP30')) unless item.picture.blank? %>
+              </div>
+            <% end %>
+          </td>
+          <td class="title"> <%= item.product.title %> </td>
+          <td class="qty"> <%= item.quantity %> </td>
+          <td class="price"> <%= number_to_currency(item.unit_price) %> </td>
+          <td class="price"> <%= number_to_currency(item.full_price) %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

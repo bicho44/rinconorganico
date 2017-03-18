@@ -1,0 +1,1 @@
+$('form.contact .notice').html('<%= @message.valid? ? "Mensaje enviado correctamente" : "Error: #{@message.errors.full_messages.first}" %>').show();

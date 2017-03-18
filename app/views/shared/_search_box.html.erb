@@ -1,0 +1,5 @@
+<%= form_tag path, :method => 'get', :class=>"search #{klass}" do %>
+  <label>Buscar</label>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>

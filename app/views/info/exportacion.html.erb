@@ -1,0 +1,36 @@
+<% content_for :slider do %>
+ <%= image_tag 'content/exportacion/banner.png' %>
+<% end %>	
+<%= image_tag 'content/exportacion/for_export.png', style: 'position:relative;margin-bottom:-9px;margin-left:482px' %>
+
+<% content_for(:title) do %>
+  Exportación
+<% end %>
+
+<div class="slat slat-shadow white">
+  <div class="article">
+    <div class='title'>Departamento de exportación</div>
+    <div class="description"> 
+      <p>
+        Desarrollamos un área de exportación como resultado de nuestro vasto conocimiento sobre la producción orgánica en la Argentina y de la necesidad de insertarnos en el creciente mercado mundial de productos orgánicos. Para ello, conectamos a diversos productores y procesadores orgánicos, argentinos y latinoamericanos, con el mercado internacional, garantizando los estándares de calidad que requieren los compradores.
+      </p>
+      <p>
+        Después de muchos años de dedicación, establecimos una red de productores y procesadores provenientes de distintas partes de Latinoamérica. Trabajamos con productos ciento por ciento orgánicos de pequeños y grandes productores, y fomentamos y acompañamos el desarrollo de nuevos proyectos. Para nosotros, la transparencia en cada eslabón del proceso es un valor central, como la calidad y la justicia social.
+      </p>
+      <h3>Un poco de historia:</h3>
+      <p>
+        En 1994, desde San Genaro, nuestro establecimiento orgánico en Ranchos, provincia de Buenos Aires, nos vinculamos con el mercado de la exportación. En ese entonces, producíamos zapallos hokkaidos orgánicos, entre otros alimentos, y empezamos a introducirlos en el mundo orgánico. Esos fueron nuestros primeros pasos hasta generar la red de productores de América Latina y del Caribe que El Rincón Orgánico representa hoy.
+      </p>
+      <p> Contacto: mariacalzada@elrinconorganico.com.ar </p>      
+    </div>
+  </div>
+</div>
+
+<% content_for :right_banner do %>
+  <%= sidebanner_join(
+    testimonial_banner_slats(1) <<
+    certification_banner_slats(1) <<
+    cv_banner_slats() <<
+    product_banner_slats(1)
+  )%>
+<% end %>

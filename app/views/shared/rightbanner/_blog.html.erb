@@ -1,0 +1,7 @@
+<div class="slat sidebar blog light-shadow">
+  <h4>Nota</h4>
+  <%#= link_to(image_tag(x.picture.thumb('156x117')), x) %>
+  <h3><%= link_to x.title, post_path(x) %></h3>
+  <p><%= truncate(x.description,length: 150) %></p>
+  <%= link_to 'Ver Más', post_path(x), :class => 'more' %>
+</div>

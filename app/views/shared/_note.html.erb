@@ -1,0 +1,9 @@
+<div class="slat slat-shadow white">
+  <div class="article <%= 'l-twocolumns' if defined? twocolumn and twocolumn ==true %>">
+    <div class="title"><%= note.title %></div>
+    <% unless note.picture.blank? %>
+    <div class="picture"><%= image_tag note.picture.thumb('320xL1000') %></div>
+    <% end %>
+    <div class="description"> <%= simple_format note.description %> </div>
+  </div>
+</div>

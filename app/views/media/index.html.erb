@@ -1,0 +1,26 @@
+<% content_for(:title) do %>
+  Prensa
+<% end %>
+
+<% search_box(media_path, 'l-righty') %>
+<h3 class="l-title">Prensa</h3>
+<% @notes.each do |note| %>
+  <%=link_to medium_path(note) do %>
+    <div class="press" style="width:150px;text-align:center">
+      <%=image_tag note.picture.thumb('100x180') %><br>
+      <%=  note.title %>
+    </div>
+  <% end %>
+<% end %>
+<%= paginate @notes %>
+
+<% content_for :slider do %>
+  <div class="banner note">
+    <%= image_tag asset_path('content/prensa/header.jpg'), :class => 'background' %>
+    <h2><span>Prensa</span></h2>
+  </div>
+<% end %> 
+
+<% content_for :right_banner do %>
+  <%= render 'media/rightbanner' %>  
+<% end %>

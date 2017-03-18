@@ -1,0 +1,43 @@
+<div class="slat slat-shadow l-white cart-table">
+  <table class="checkout-table"> 
+    <thead>
+      <tr class="titles">
+        <th width="50"></tf>
+        <th width="350">Producto</th> 
+        <th>Cantidad</th> 
+        <th>Precio unit.</th> 
+        <th>Total</th> 
+        <th width="60">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_cart.cart_items.each do |item| %>
+        <%= f.fields_for :cart_items, item do |x| %>
+        <tr class="content">
+          <td class="image">
+            <%= link_to item.product do %>
+              <div class="photo-product">
+                <%= image_tag(item.picture.thumb('40xP30')) unless item.picture.blank? %>
+              </div>
+            <% end %>
+          </td>
+          <td class="title"> <%= item.product.title %> </td>
+          <td class="qty">
+            <%= x.text_field :quantity, :size=>"2" %>
+            <%= f.submit 'Actualizar', :class => 'link', name: 'hola' %>
+          </td>
+          <td class="price"> <%= number_to_currency(item.unit_price) %> </td>
+          <td class="price"> <%= number_to_currency(item.full_price) %> </td>
+          <td><%= link_to 'Eliminar', item, confirm: 'Desea eliminar?',
+            method: :delete, :class=>"button destroy" %></td>
+        </tr>
+        <% end %>
+      <% end %>
+      <tr>
+        <td colspan="6">
+          <h4 class="total">Total: <%= number_to_currency current_cart.total_price %></h4>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+<div class="sitemap">
+  <h3 class="title"> Mapa del sitio </h3>
+  <ul>
+    <li> <%= link_to 'Quiénes somos', quienes_path %> </li>
+    <li> <%= link_to 'Productos', categories_path %> </li>
+    <li> <%= link_to 'Servicios', servicios_path %> </li>
+    <li> <%= link_to 'Bar', bars_path %> </li>
+    <!-- <li> <%= link_to 'Talleres', posts_path %> </li> -->
+    <li> <%= link_to 'Notas', posts_path %> </li>
+    <li> <%= link_to 'Exportación', exportacion_path %> </li>
+    <li> <%= link_to 'Contacto',  contact_path %> </li>
+    <li> <%= link_to 'Catering', caterings_path %> </li>
+    <li> <%= link_to 'Recetas', recipes_path %> </li>
+    <li> <%= link_to 'Testimonios', testimonies_path %> </li>
+    <li> <%= link_to 'Certificaciones', certifications_path %> </li>
+  </ul>
+</div>
+
+<%= form_tag contact_path, class:'contact', remote:true do |f| %>
+  <div class="notice"> </div>
+  <div class="title"> Consultas </div>  
+  <%= text_field :message, :name, placeholder: "Nombre" %><br>
+  <%= text_field :message, :email, placeholder: "Email" %><br>
+  <%= text_area_tag "message[body]" %>
+  <%= submit_tag "Enviar", class:"submit"%>
+<% end %>

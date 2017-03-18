@@ -1,0 +1,27 @@
+<% content_for(:title) do %>
+  Productores
+<% end %>
+
+<% @producers.each do |p| %>
+  <% seed_box "wide short", "summary producer white" do %>
+      <div class="picture"> <%= link_to(image_tag(p.picture.thumb('127xP127')), p) %>   </div>
+      <div class="title"><%= link_to p.title, p %></div>
+      <div class="description">
+        <%= truncate_html(p.description, length: 200, omission: '...') %>
+      </div>
+      <%= link_to "Leer mas", p, class:'more' %>
+  <% end %> 
+<% end %>
+
+<%= paginate (@producers) %>
+
+<% content_for :slider do %>
+  <div class="banner note">
+    <%= image_tag asset_path('content/productores/productores.jpg'), :class => 'background' %>
+    <h2><span>Productores</span></h2>
+  </div>
+<% end %> 
+
+<% content_for :right_banner do %>
+  <%= render 'producers/rightbanner' %>
+<% end %>

@@ -1,0 +1,28 @@
+<% content_for(:title) do %>
+  Certificaciones
+<% end %>
+
+<% @certifications.each_with_index do |p,i| %>
+  <%= link_to p do %>
+    <div class="article certifications l-white">
+      <div class="picture"> <%= image_tag p.picture.thumb('140x140') %>   </div>
+      <div class="title"><%= p.title %></div>
+      <div class="description"> 
+        <%= simple_format truncate(strip_tags(p.description), length: 400) %> 
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= paginate @certifications %>
+
+<% content_for :slider do %>
+  <div class="banner note">
+    <%= image_tag asset_path('content/certificaciones/header.jpg'), :class => 'background' %>
+    <h2><span>Certificaciones</span></h2>
+  </div>
+<% end %> 
+
+<% content_for :right_banner do %>
+  <%= render 'certifications/rightbanner' %>
+<% end %>

@@ -1,0 +1,31 @@
+<% #content_for :slider do %>
+  <%# first_slide = render partial: '/categories/featured_product_banner', locals: {product: Product.first}%>
+  <%# carousel(sliders: [first_slide]) %>
+<%# end %> 
+
+<% content_for(:title) do %>
+  Productos
+<% end %>
+
+<div class="l-row category-header">
+  <%= render partial: '/categories/menu', locals: {categories: @categories} %>
+  <%= render partial: '/categories/breadcrumbs', locals: {categories: []}%>
+  <% search_box(categories_path, 'products') %>
+</div>
+<%= render @slats_view ? 'products_slats' : 'products' %>
+<%= paginate @products %>
+
+<% content_for :right_banner do %>
+  <% if @slats_view %>
+    <%= sidebanner_join(
+      recipe_banner_slats(4)
+    )%>
+  <% else %>
+    <%= sidebanner_join(
+      product_banner_slats(2) <<
+      testimonial_banner_slats(1) <<
+      recipe_banner_slats(1)
+    )%>
+  <% end %>
+<% end %>
+

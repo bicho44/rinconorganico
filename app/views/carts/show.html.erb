@@ -1,0 +1,22 @@
+<% content_for(:title) do %>
+  Mi Canasta
+<% end %>
+
+<h3 class="l-title">Mi canasta </h3>
+
+<% if current_cart.cart_items.empty? %>
+  Tu canasta esta vacía! Conocé nuestros <%= link_to 'productos', categories_path %>
+<% else %>
+<div class="cart">
+  <%= form_for current_cart, :url => update_current_cart_path(current_cart), :as => :cart do |f| %>
+    <%= render partial: '/carts/table', locals: {f: f} %>
+  <% end %>
+
+  <div class="actions">
+    <%= link_to "Finalizar compra", new_order_path, :class => 'l-button l-button-big l-righty', :disable_with => "Enviando..." %>
+    <% if session[:last_product_page] %>
+    <%= link_to "Seguir comprando", session[:last_product_page], :class => 'continue' %>
+    <% end %>
+  </div>
+</div>
+<% end %>

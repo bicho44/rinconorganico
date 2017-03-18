@@ -1,0 +1,54 @@
+<nav class="l-menu l-extensible_menu">
+	<ul class="horizontal <%= !current_page('home', 'index') ? 'mini' : '' %>">
+		<li class="bar">
+			<%= link_to bars_path do %>
+			<span class="title tall">Bio-Bar y<br/>Almacén Orgánico</span>
+			<div class="extensible">
+				<span class="divisor"></span>
+				<%=image_tag 'layout/menu/biobar.jpg' %>
+				<span class="text">Abierto de lunes a sábados de 11 a 20hs</span>
+			</div>
+			<% end %>
+		</li>
+		<li class="quienes">
+			<%= link_to delivery_path do %>
+			<span class="title short">Delivery</span>
+			<div class="extensible">
+				<span class="divisor"></span>
+				<%=image_tag 'layout/menu/delivery.jpg' %>
+				<span class="text">T: 2062.9515.  De lunes a viernes de 10.00 a 18.00.</span>
+			</div>
+			<% end %>
+		</li>
+		<li class="almacen">
+			<%= link_to categories_path do %>
+			<span class="title tall">Nuestros<br/>Productos</span>
+			<div class="extensible">
+				<span class="divisor"></span>
+				<%=image_tag 'layout/menu/almacen.jpg' %>
+				<span class="text">Conocé nuestros productos</span>
+			</div>
+			<% end %>
+		</li>
+		<li class="catering">
+			<%= link_to caterings_path do %>
+			<span class="title tall">Servicio<br />de Catering</span>
+			<div class="extensible">
+				<span class="divisor"></span>
+				<%=image_tag 'layout/menu/catering.jpg', width:'100%' %>
+				<span class="text">Propuestas sabrosas, únicas ¡y preparadas para cada uno!</span>
+			</div> 
+			<% end %>
+		</li>
+		<li class="exportacion">
+			<%= link_to posts_path do %>
+			<span class="title short">Novedades</span>
+			<div class="extensible">
+				<span class="divisor"></span>
+				<%=image_tag 'layout/menu/exportacion.jpg' %>
+				<span class="text">Contactanos</span>
+			</div>
+			<% end %>
+		</li>
+	</ul>
+</nav>

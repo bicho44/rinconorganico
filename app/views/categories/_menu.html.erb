@@ -1,0 +1,19 @@
+<ul class="category-menu">
+  <li class="<%= 'current' if current_page?(categories_path)%>"> 
+    <%=link_to 'TODOS', categories_path %>
+  </li>
+  <% Category.roots.each do |category|%>
+    <li class="<%= 'current' if category == @category %>">
+      <%= link_to category.title, category  %>
+
+      <% unless category.children.empty? %>
+      <ul class="submenu">
+        <% category.children.each do |c| %>
+          <li><%= link_to c.title, c %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<div style="clear:both"></div>

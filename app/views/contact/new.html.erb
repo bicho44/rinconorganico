@@ -1,0 +1,28 @@
+<% content_for(:title) do %>
+  Contacto
+<% end %>
+
+<h2 class="l-title">Contacto</h2>
+<%= semantic_form_for @message, url: contact_path do |f| %>
+  <%= f.input :name, label:'Nombre' %>
+  <%= f.input :last_name, label:'Apellido' %>
+  <%= f.input :email, label: 'E-mail' %>
+  <%= f.input :subject, label: 'Asunto' %>
+  <%= label_tag 'Mensaje' %>
+  <%= text_area_tag "message[body]", @message.body %>
+  <%= f.submit 'Enviar' %>
+<% end %>
+<%=image_tag 'content/contacto/schedule.png' %>
+<div class="contact-details">
+  Te esperamos en Bulnes 910, CABA. T: 011 2062.9515<br>
+  <a href="mailto:info@elrinconorganico.com.ar">info@elrinconorganico.com.ar</a>
+</div>
+
+<%#= image_tag 'content/contacto/body.png' %>
+
+<% content_for :slider do %>
+  <div class="banner note">
+    <%= image_tag asset_path('content/contacto/header.jpg'), :class => 'background' %>
+    <h2><span>Contacto</span></h2>
+  </div>
+<% end %> 

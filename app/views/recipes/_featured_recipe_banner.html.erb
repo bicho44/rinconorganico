@@ -1,0 +1,17 @@
+<div class="banner recipe" style="background-image: url(<%= asset_path 'content/recetas/recetas.jpg' %>)">
+  <h2><span>Recetas</span></h2>
+  <div class="inner">
+    <div class="slat-product">
+      <div class="photo-product photo-product-small">
+        <%= link_to raw(image_tag(recipe.picture.thumb('143xF96'))), p %>
+      </div>
+      <h3 class="title"><%= recipe.title %></h3>
+      <p><%= raw (truncate recipe.description, length: 200) %></p>
+      
+      <%= link_to(recipe, :class=>'more') do %>
+        Ver Más
+        <span class="icon"></span>
+      <% end %>
+    </div>
+  </div>
+</div>

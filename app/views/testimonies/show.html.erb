@@ -1,0 +1,13 @@
+<% content_for(:title) do %>
+  <%= @testimony.title %>
+<% end %>
+
+<div>
+  <h3><%= @testimony.title %></h3>
+  <%= @testimony.description %>
+</div>
+<%= link_to "Testimonios", testimonies_path, :class => 'l-bottom-link' %>
+
+<% content_for :right_banner do %>
+  <%= render 'testimonies/rightbanner' %>
+<% end %>

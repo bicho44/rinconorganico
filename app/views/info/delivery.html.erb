@@ -1,0 +1,62 @@
+<% content_for :slider do %>
+  <div class="banner note">
+    <%= image_tag asset_path('content/delivery/delivery.jpg'), :class => 'background' %>
+    <h2><span>Delivery</span></h2>
+  </div>
+<% end %> 
+
+<% content_for(:title) do %>
+  Delivery
+<% end %>
+
+<div class="slat slat-shadow white delivery">
+  <h3 class="title green">De la huerta a tu puerta</h3>
+  <p>
+    <span class="quote"><%= image_tag 'content/delivery/quote.png' %></span>
+    <span class="bigger">Desde 1989,</span> entregamos a domicilio productos orgánicos de alta calidad, a toda la Ciudad Autónoma de Buenos Aires y alrededores. Nuestro lema siempre ha sido DE LA HUERTA A TU PUERTA. Uniendo productores de todos los rincones del país, ofrecemos una amplia variedad de productos frescos y de almacén.
+    <span class="quote inverted"><%= image_tag 'content/delivery/iquote.png' %></span>
+  </p>
+  <p class="signature">
+    <strong>BIOCHEF MARIA CALZADA</strong><br>
+    CEO de El Rincón Orgánico
+  </p>
+  <div class="l-divider"></div>
+
+  <h3 class="title">Pedidos</h3>
+  <p>Los pedidos se pueden realizar a través de los siguiente medios:</p>
+  <ul class="medios">
+    <li>
+      <span class="icon cart"></span>
+      Se pueden hacer los pedidos por medio de esta página web a través del carrito de pedidos
+    </li>
+    <li>
+      <span class="icon cell"></span>
+      <span class="sub">+54 11 2062.9515 / 2062.2230</span><br>
+      de lunes a viernes de 10:00 a 18:00hs.
+    </li>
+    <li>
+      <span class="icon mail"></span>
+      pedidos@elrinconorganico.com.ar
+    </li>
+    <li>
+      <span class="icon pin"></span>
+      en nuestro almacen<br>
+      <span class="sub">Bulnes 910, CABA</span>
+    </li>
+  </ul>
+  <%= image_tag 'content/delivery/map.png', :class => 'map' %>
+  
+  <h3 class="title">Entregas</h3>
+  <p>
+    <span class="bigger">Las entregas se realizan los martes y jueves dependiendo de la zona.</span><br>
+    En el caso de los feriados, los pedidos y las entregas se posponen un día. Tienen tiempo para efectuar sus pedidos por el medio que elijan (web, teléfono, correo o almacén) hasta antes de las 10hs del día previo a su entrega, ya que los productos se cosechan y se faenan de acuerdo a lo solicitado. Así, aseguramos la frescura y la calidad de los alimentos.
+  </p>
+  <br>
+  <p>
+    <strong>
+    Los pedidos de lácteos deben realizarse con una semana de antelación, antes del jueves, debido a que el tambo elabora cada pedido y transforma el remanente en queso para evitar desperdicios.</strong>
+  </p>
+  <br>
+  <h3 class="title">Compra Mínima</h3>
+  <p>Para Capital Federal, la compra mínima es de $350, e incluye el costo de envío. Para la periferia de la ciudad, el mínimo varía según la zona de entrega. Es importante consultar cuanto es el mínimo para cada zona.</p>
+</div>

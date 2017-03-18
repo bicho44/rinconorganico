@@ -1,0 +1,21 @@
+<% content_for(:title) do %>
+  <%= @note.title %>
+<% end %>
+
+<h1 class="l-title"><%= @note.title %></h1>
+<div class="article media">
+  <%= image_tag(@note.picture.thumb('500x5000'), :class=>'picture') %>
+  <div class="description">
+    <%= raw(@note.description) %>
+  </div>
+</div>
+
+<%=link_to 'Volver a Prensa', media_path(), :class => 'l-bottom-link' %>
+
+<% content_for :slider do %>
+ <%= image_tag 'content/prensa/header.jpg' %>
+<% end %> 
+
+<% content_for :right_banner do %>
+  <%= render 'media/rightbanner' %>  
+<% end %>

@@ -1,0 +1,41 @@
+<% content_for(:title) do %>
+  Finalizar Pedido
+<% end %>
+
+<h3 class="l-title">Finalizar el Pedido</h3>
+
+<div class="form-pane">
+  <h3 class="l-subtitle">Datos de envío</h3>
+  <%= semantic_form_for @order, html:{class:'slat slat-shadow l-white cart-table'} do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :phone %>
+    <%= f.input :cellular %>
+    <%= f.input :shipping_address %>
+    <%= f.input :district %>
+    <%= f.input :postal_code %>
+    <%= f.input :city %>
+    <%= f.input :company %>
+    <%= f.input :cuit  %>
+    <%= f.input :comments, as: :text, :input_html => { :rows => 3 } %>
+    <%#= f.actions do %>
+      <%#= f.action :submit, :label => "Hacer pedido" ,:button_html => { :class => "primary", :disable_with => 'Enviando...' } %>
+    <%# end %>
+    <%#= f.submit :"Hacer pedido" %>
+  <% end %>
+</div>
+
+<div class="cart summary">
+  <h3 class="l-subtitle">Resumen del Pedido</h3>
+  <%= render partial: 'table_summary', locals: {:items => @items} %>
+
+  <input type="button" class="l-button l-button-big" name="enviar" value="Realizar pedido" disable-with="Enviando..." />
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.cart.summary input[name="enviar"]').click(function() {
+      $('#new_order').submit();
+    });
+  });
+</script>

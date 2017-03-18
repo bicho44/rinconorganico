@@ -1,0 +1,10 @@
+<div class="slat sidebar product light-shadow">
+  <div class="photo-product photo-product-small">
+    <div class="watermark green"></div>
+    <%= link_to raw(image_tag(x.picture.thumb('156x117'), size:'156x117')), x %>
+    <div class="price"> <%= number_to_currency(x.price) %></div>
+  </div>
+  <h3><%= link_to x.title, x %></h3>
+  <p class="measure"><%= x.measure %></p>
+  <%= link_to 'Ver Más', x, :class => 'more' %>
+</div>

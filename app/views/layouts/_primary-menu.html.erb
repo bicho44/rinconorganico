@@ -1,0 +1,16 @@
+<nav class="l-menu l-primary_nav l-lefty">
+  <ul class="top">
+    <li><%= link_to 'Nuestra Historia', quienes_path, class: current_page?(quienes_path) ? 'active' : '' %></li>
+    <li><%= link_to 'Productos', categories_path,  class: current_url_regex?([categories_path(), "/productos"]) ? 'active' :  ''%></li>
+    <li><%= link_to 'Servicios', servicios_path, class: current_page?(servicios_path) ? 'active' : '' %></li>
+    <li><%= link_to 'Prensa', media_path, class: current_page?(media_path) ? 'active' : '' %></li>
+    <li><%= link_to 'Contacto', contact_path, class: current_page?(contact_path) ? 'active' : '' %></li>
+  </ul>
+  <ul class="bottom">
+    <li><%= link_to 'Recetas', recipes_path, class: current_page?(recipes_path) ? 'active' : '' %></li>
+    <li><%= link_to 'Testimonios', testimonies_path, class: current_page?(testimonies_path) ? 'active' : '' %></li>
+    <li><%= link_to 'Productores', producers_path, class: current_page?(producers_path) ? 'active' : '' %></li>
+    <li><%= link_to 'Certificaciones', certifications_path, class: current_page?(certifications_path) ? 'active' : '' %></li>
+    <li><%= link_to 'Exportación', exportacion_path, class: current_page?(exportacion_path) ? 'active' : '' %></li>
+  </ul>
+</nav>

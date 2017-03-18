@@ -1,0 +1,44 @@
+<style>
+.xx{float:left;width: 20%;}
+.xxx{float:left;width: 65%; overflow:hidden;}
+.xxxx{width: 15%; overflow:hidden;}
+.xxxx form {margin-top: 10px;}
+}
+/*.xxxx *{display:inline-block; text-align: right;}*/
+</style>
+<% @products.each do |p| %>
+  <div class="slat product semitransparent">
+    <div class="xx">
+      <%= link_to p do %>
+        <div class="photo-product photo-product-140x105">
+          <div class="watermark <%= p.is_sale ? 'on_sale' : 'green' %>"></div>
+          <% if (p.picture.present?) %>
+          <%= image_tag(p.picture.thumb('140xP105')) %>
+          <% else %>
+          <%= image_tag p.picture.default_url, size: '140x105' %>
+          <% end %>
+          <!-- <div class="price"> <%= number_to_currency(p.price) %></div> -->
+        </div>
+      <% end %>
+    </div>   
+
+    <div class="xxx slat-product">
+      <%= link_to p.title, p, class: 'title' %>
+      <% unless p.description.empty? %>
+      <p class="description">DESCRIPCIÓN: <%= raw(p.description) %> </p>
+      <% end %>
+    </div>
+
+    <div class="xxxx slat-product">
+      <div class="price"> <%= number_to_currency(p.price) %> </div>
+      <p class="measure"><%= p.measure %></p>
+      <%= form_for p.cart_items.build do |f| %>
+        <%= select "cart_item", "quantity", (1..10) %>
+        <%= f.hidden_field :product_id %>
+        <button class="add-to-basket"> Agregar <span class="icon"></span><br />a mi canasta </button>
+      <% end %> 
+    </div>
+  </div>
+<% end %>
+
+

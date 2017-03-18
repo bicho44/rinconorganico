@@ -1,0 +1,34 @@
+<% content_for(:title) do %>
+  <%= @recipe.title %>
+<% end %>
+
+<% content_for :slider do %>
+  <% featured_recipe =  Banner.current.recipe_banner || Recipe.first %>
+  <% sliders = [] %>
+  <% sliders << render(partial: '/recipes/featured_recipe_banner', locals: {recipe: featured_recipe}) if featured_recipe%>
+  <% carousel(sliders: sliders) %>
+<% end %>
+
+<div class="slat slat-shadow white">
+  <div class="article <%= 'l-twocolumns' if defined? twocolumn and twocolumn ==true %>">
+    <div class="title"><%= @recipe.title %></div>
+    <% unless @recipe.picture.blank? %>
+    <div class="picture"><%= image_tag @recipe.picture.thumb('360x1000') %></div>
+    <% end %>
+    <div class="description"> <%= simple_format @recipe.description %> </div>
+    <div class="related-stuff">
+    <% unless @recipe.cookings.empty? %>
+      <h3 class="title">Ingredientes: </h3>
+      <% @recipe.cookings.each do |r| %>
+        <%= link_to r.product.title, r.product %><br>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Ir a Recetas', recipes_path, :class => 'l-bottom-link' %>
+
+<% content_for :right_banner do %>
+  <%= render 'recipes/rightbanner' %>
+<% end %>

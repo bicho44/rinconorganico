@@ -1,0 +1,48 @@
+<style>
+  #new_message{
+    float:right;
+    margin-right: 21px;
+    margin-top:100px;
+  }
+  #new_message input[type=text], #new_message textarea{
+    background-color:lightgray;
+    height: 17px;
+    margin-bottom:2px;
+    width: 199px;
+    border:solid 1px white;
+  }
+  #new_message textarea{
+    height:30px;
+    padding:0;
+  }
+  #new_message input[type=submit]{
+    border:none;
+    background:inherit;
+    font-size:8px;
+    float:right;
+    margin-right: -3px;
+    color:white;
+  }
+</style>
+<% #Implementar ajax aqui %>
+<%= form_for Message.new, :url => contact_path do |form| %>
+  <fieldset class="fields">
+    <div class="field">
+      <%#= form.label :name %>
+      <%= form.text_field :name, placeholder: 'Nombre' %>
+    </div>
+    <div class="field">
+      <%#= form.label :email %>
+      <%= form.text_field :email, placeholder: 'Email' %>
+    </div>
+
+    <div class="field">
+      <%#= form.label :body %>
+      <%= form.text_area :body, placeholder: 'Comentario' %>
+    </div>
+  </fieldset>
+  
+  <fieldset class="actions">
+    <%= form.submit "Enviar" %>
+  </fieldset>
+<% end %>

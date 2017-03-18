@@ -1,0 +1,20 @@
+<div class="banner product" style="background-image: url(<%= asset_path 'content/productos/header.jpg' %>)">
+  <h2><span>Productos</span></h2>
+  <div class="leaf-box right leaf">
+    <div class="inner">
+      <div class="slat-product">
+        <div class="photo-product photo-product-small">
+          <div class="watermark <%= product.is_sale ? 'on_sale' : 'green' %>"></div>
+          <%= link_to raw(image_tag(product.picture.thumb('184x151'), size:'184x151')), p %>
+          <div class="price"> <%= number_to_currency(product.price) %></div>
+        </div>
+        <p class="title"><%= product.title %></p>
+        <p class="measure"><%= product.measure %></p>
+        <%= link_to(product, :class=>'more') do %>
+          Ver Más
+          <span class="icon"></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

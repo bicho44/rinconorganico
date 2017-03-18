@@ -1,0 +1,10 @@
+<% content_for(:title) do %>
+  <%= @certification.title %>
+<% end %>
+
+<%= render partial: '/shared/note', locals: {:note => @certification} %>
+<%= link_to 'Ir a certificaciones', certifications_path, :class => 'l-bottom-link' %>
+  
+<% content_for :right_banner do %>
+  <%= render 'caterings/rightbanner' %>
+<% end %>

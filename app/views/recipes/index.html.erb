@@ -1,0 +1,50 @@
+<% content_for(:title) do %>
+  Recetas
+<% end %>
+
+<% content_for :slider do %>
+  <% featured_recipe =  Banner.current.recipe_banner || Recipe.first %>
+  <% sliders = [] %>
+  <% sliders << render(partial: '/recipes/featured_recipe_banner', locals: {recipe: featured_recipe}) if featured_recipe%>
+  <% carousel(sliders: sliders) %>
+<% end %> 
+
+<% search_box recipes_path %>
+
+<h3 class="l-title">Recetas</h3>
+
+<div class="l-7030">
+  <div class="first right-dashed">
+    <% unless @recipes.empty? %>
+    <% @recipes.each do |r| %>
+      <% seed_box 'narrow short', 'summary recipe white' do %>
+        <div class="title"><%= link_to r.title, r %></div>
+        <div class="description">
+          <%= truncate_html(r.description, length: 200, omission: '...') %>
+        </div>
+        <div class="picture"><%= link_to(image_tag(r.picture.thumb('151xF111')), r) %></div>
+        <%= link_to 'Leer más...', r, :class=>'more' %>
+      <% end %>
+    <% end %>
+    <%= paginate @recipes %>
+    <% else %>
+    No hay contenido.
+    <% end %>
+  </div>
+  <div class="second recipes">
+    <div class="l-title-secondary"> Artículos más leídos</div>
+    <% @recipes.shuffle.take(4).each do |r| #NO HACER SHUFFLE DE UN ARRAY QUE TIENE 1000 OBJETOS si solo necesito 4!%>
+      <div class="related-note">
+        <div class="title"> <%= link_to r.title, r %> </div>
+        <div class="description">
+          <%= truncate_html(r.description, length: 40, omission: '...') %>
+        </div>
+        <%= link_to 'Leer más...', r, :class=>'more' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% content_for :right_banner do %>
+  <%= render 'recipes/rightbanner' %>
+<% end %>

@@ -1,0 +1,91 @@
+<% content_for(:title) do %>
+  Servicios
+<% end %>
+
+<% content_for :slider do %>
+ <%= image_tag 'content/servicios/header.png' %>
+<% end %>	
+<% content_for :right_banner do %>
+  <%= sidebanner_join(
+    testimonial_banner_slats(1) <<
+    certification_banner_slats(1) <<
+    blog_banner_slats(1) <<
+    cv_banner_slats()
+    )
+  %>
+<% end %>	
+
+<h3 class="l-title">Servicios</h3>
+<div class="poster servicios delivery">
+  <%= image_tag "content/servicios/01.Servicios-Delivery.jpg"%>
+  <div class="transparent-text">
+    <div class="title"><%= link_to 'delivery', delivery_path, class: :more %></div>
+    <!-- <div class="description">
+      DE LA HUERTA A TU PUERTA! Uniendo productores de todos los rincones del país, ofrecemos una amplia variedad de productos frescos y de almacén. Entregamos a domicilio a toda la Ciudad Autónoma de Buenos Aires y alrededores. 
+      Se pueden hacer los pedidos por medio de esta página web , por teléfono de lunes a viernes de 10.00 a 18.00. Tel:2062.9515 / 2062.2230, por correo electrónico (pedidos@elrinconorganico.com.ar) o en nuestro almacén. 
+    </div> -->
+    <%= link_to delivery_path, class: :more do %>
+      pedinos
+      <%= image_tag('content/servicios/ok.png') %>
+    <% end %>
+  </div>
+</div> 
+
+<div class="poster servicios biobar">
+  <%= image_tag "content/servicios/02.Servicios-Biobar.jpg"%>
+  <div class="transparent-text">
+    <div class="title"><%= link_to 'biobar cultural', bars_path, class: :more %></div>
+    <!-- <div class="description">
+      Los invitamos a conocer nuestro BioBar cultural, donde podrán degustar y disfrutar todos los productos orgánicos en su máximo esplendor.
+    </div> -->
+    <%= link_to bars_path, class: :more do %>
+      conocelo
+      <%= image_tag('content/servicios/ok.png') %>
+    <% end %>
+  </div>
+</div> 
+
+<div class="poster servicios almacen">
+  <%= image_tag "content/servicios/03.Servicios-Almacen.jpg"%>
+  <div class="transparent-text">
+    <div class="title"><%= link_to 'almacen organico', categories_path, class: :more %></div>
+    <!-- <div class="description">
+      En el almacén de El Rincón Orgánico, (Bulnes 910, esquina Guardia Vieja, Capital Federal) podrán elegir entre una amplia variedad de productos envasados y frescos de alta calidad orgánica, por ejemplo, verduras, frutas, pollos, lácteos, quesos, productos de soja, aceites, cereales, semillas, frutos secos, harinas, vinos, mieles, dulces y jugos. 
+    </div> -->
+    <%= link_to categories_path, class: :more do %>
+      conocelo
+      <%= image_tag('content/servicios/ok.png') %>
+    <% end %>
+  </div>
+</div> 
+
+<div class="poster servicios catering">
+  <%= image_tag "content/servicios/04.Servicios-Catering.jpg"%>
+  <div class="transparent-text">
+    <div class="title"><%= link_to 'catering', caterings_path, class: :more %></div>
+    <!-- <div class="description">
+      Ofrecemos un servicio de catering orgánico con propuestas sabrosas, únicas ¡y preparadas para cada uno! Contamos con un amplio y variado abanico de menúes, guiado por los productos de estación y los principios orgánicos.Estamos a su disposición para responder consultas y pedidos de presupuesto.<br>
+      Correo electrónico: info@elrinconorganico.com.ar. <br>Teléfonos: 2062.9515/2062.2230.
+    </div> -->
+    <%= link_to caterings_path, class: :more do %>
+      pedí tu presupuesto
+      <%= image_tag('content/servicios/notepad.png') %>
+    <% end %>
+  </div>
+</div> 
+
+<div class="poster servicios exportacion">
+  <%= image_tag "content/servicios/05.Servicios-Exportacion.jpg"%>
+  <div class="transparent-text">
+    <div class="title"><%= link_to 'departamento de exportación', exportacion_path, class: :more %></div>
+    <!-- <div class="description">
+      Conectamos a diversos productores y procesadores orgánicos, argentinos y latinoamericanos, con el mercado internacional, garantizando los estándares de calidad que requieren los compradores. Establecimos una red de productores y procesadores provenientes de distintas partes de Latinoamérica. Trabajamos con productos ciento por ciento orgánicos de pequeños y grandes productores.
+    </div> -->
+    <%= link_to exportacion_path, class: :more do %>
+      pedí tu presupuesto
+      <%= image_tag('content/servicios/notepad.png') %>
+    <% end %>
+  </div>
+</div> 
+
+<%#= image_tag 'content/servicios/body.png' %>

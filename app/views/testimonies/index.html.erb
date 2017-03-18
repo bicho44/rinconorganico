@@ -1,0 +1,28 @@
+<% content_for(:title) do %>
+  Testimonios
+<% end %>
+
+<div class="l-twocolumns">
+<% @testimonies.each do |t| %>
+  <div class="article testimony">
+    <div class="title"><%= t.title %></div>
+    <div class="picture"><%=image_tag t.picture.thumb('134x134') %></div>
+    <div class="description">
+      <%= simple_format t.description %>
+    </div>
+    <div class="divisor"></div>
+  </div>
+<% end %>
+</div>
+<%= paginate @testimonies %>
+
+<% content_for :right_banner do %>
+  <%= render 'testimonies/rightbanner' %>
+<% end %>
+
+<% content_for :slider do %>
+  <div class="banner note">
+    <%= image_tag asset_path('content/testimoniales/testimonios.jpg'), :class => 'background' %>
+    <h2><span>Testimonios</span></h2>
+  </div>
+<% end %> 

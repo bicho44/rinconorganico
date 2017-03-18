@@ -1,0 +1,118 @@
+<html>
+<head>
+  <title>El Rincón Orgnánico</title>
+  <style type="text/css">
+
+
+  </style>
+</head>
+<body style="max-width: 600px">
+  <table width="600">
+    <tr>
+      <td><%= image_tag attachments['contacto.jpg'].url, alt: "Contacto" %></td>
+      <td style="text-align: right">
+        <%= image_tag attachments['logo.jpg'].url, alt: "El Rinción Orgánico" %><br>
+        <a href="http://www.elrinconorganico.com.ar">www.elrinconorganico.com.ar</a>
+      </td>
+    </tr>
+  </table>
+
+  <table width="600" style="margin-top: 30px;">
+    <tr>
+      <td style="width:60px;"></td>
+      <td>
+        Muchas gracias <%= @order.first_name %>,<br>
+        Recibimos tu pedido a través del sitio. Te lo detallamos a continuación:
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="vertical-align:top;width:60px;"><%= image_tag attachments['pedido.jpg'].url, alt: "" %></td>
+      <td>
+        <h4 style="background-color: #A4A911;color: #FFF;padding: 5px;text-transform: uppercase;font-weight: normal;">Información del Pedido</h4>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table width="100%">
+          <tr><td>Nro de pedido:</td><td><%= @order.id %></td></tr>
+          <tr><td>Fecha de pedido:</td><td><%= @order.created_at %></td></tr>
+          <tr><td>Estado del pedido:</td><td>Pendiente</td></tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="vertical-align:top;width:60px;"><%= image_tag attachments['cliente.jpg'].url, alt: "" %></td>
+      <td>
+        <h4 style="background-color: #A4A911;color: #FFF;padding: 5px;text-transform: uppercase;font-weight: normal;">Información del Cliente</h4>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table width="100%">
+          <tr><td>Nombre:</td><td><%= @order.first_name %></td></tr>
+          <tr><td>Apellido:</td><td><%= @order.last_name %></td></tr>
+          <tr><td>Email:</td><td><%= @order.email %></td></tr>
+          <tr><td>Dirección:</td><td><%= @order.shipping_address %></td></tr>
+          <tr><td>Barrio:</td><td><%= @order.district %></td></tr>
+          <tr><td>Ciudad:</td><td><%= @order.city %></td></tr>
+          <tr><td>Código Postal:</td><td><%= @order.postal_code %></td></tr>
+          <tr><td>Teléfono:</td><td><%= @order.phone %></td></tr>
+          <tr><td>Celular:</td><td><%= @order.cellular %></td></tr>
+          <tr><td>Razón Social:</td><td><%= @order.company %></td></tr>
+          <tr><td>CUIT:</td><td><%= @order.cuit %></td></tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="vertical-align:top;width:60px;"><%= image_tag attachments['productos.jpg'].url, alt: "" %></td>
+      <td><h4 style="background-color: #A4A911;color: #FFF;padding: 5px;text-transform: uppercase;font-weight: normal;">Productos del Pedido</h4></td>
+    </tr>
+    <tr>
+      <td>
+        <table width="100%" style="text-align: left;">
+          <thead>
+            <tr><th>Cantidad</th><th style="min-width: 250px">Producto</th><th style="text-align:center;">Precio</th><th style="text-align:center;">Total</th></tr>
+          </thead>
+          <tbody>
+            <% @order.order_items.each do |item| %>
+              <tr>
+                <td> <%= item.quantity %> </td>
+                <td> <%= item.title %> </td>
+                <td style="text-align: center;"><%= number_to_currency(item.price) %></td>
+                <td style="text-align: center;"><%= number_to_currency(item.full_price) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="text-align:right;margin:10px;padding: 10px;border: 1px solid #A4A911;float:right;">
+          Subtotal: <%= number_to_currency(@order.total) %><br>
+          <strong>Total: <%= number_to_currency(@order.total) %></strong>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="vertical-align:top;width:60px;"><%= image_tag attachments['notas.jpg'].url, alt: "" %></td>
+      <td><h4 style="background-color: #A4A911;color: #FFF;padding: 5px;text-transform: uppercase;font-weight: normal;">Notas del Cliente<h4></td>
+    </tr>
+    <tr>
+      <td>
+        <%= @order.comments.empty? ? 'Sin notas adicionales.' : @order.comments %><br><br>
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="vertical-align:top;width:60px;"><%= image_tag attachments['pago.jpg'].url, alt: "" %></td>
+      <td><h4 style="background-color: #A4A911;color: #FFF;padding: 5px;text-transform: uppercase;font-weight: normal;">Info del pago</h4></td>
+    </tr>
+    <tr>
+      <td>
+        Contrareembolso.
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

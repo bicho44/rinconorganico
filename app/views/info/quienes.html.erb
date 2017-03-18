@@ -1,0 +1,74 @@
+<% content_for(:title) do %>
+  Nuestra Historia | El Rincón Orgánico
+<% end %>
+
+<div class="slat slat-shadow white">
+  <div class="article l-twocolumns">
+    <div class="title">Nuestra Historia</div>
+    <div class="description">
+      <p>
+        Somos el primer comercio especializado en productos orgánicos de la Argentina y de Latinoamérica. Desde hace más de veinte años, trabajamos para transmitirles a nuestros clientes un modo de vida y de alimentación que nos apasiona. Esta es nuestra historia.
+      </p>
+      <h3>Los Inicios</h3>
+      <p>
+        En 1985, Pipo Lernoud y María Calzada buscaban alimentos limpios y sanos, y una actividad constructiva. Así, en su campo “El Rincón”, en Alberdi, provincia de Buenos Aires, comenzaron a producir soja, trigo, lino, maíz, girasol y leche sin pesticidas ni fertilizantes. 
+      </p>
+      <p>
+        Esta primera experiencia –cuando lo orgánico aún no era conocido como un método alternativo de producción y no existía normativa alguna– los conectó con un estilo de agricultura, de alimentación y de vida diferentes. 
+      </p>
+      <h3>Pioneros en delivery</h3>
+      <p>
+        Entre 1987 y 1989, realizaron las primeras ventas de hortalizas orgánicas a domicilio. La distribución de los productos de las manos del productor directamente a los consumidores era una verdadera novedad en nuestro país. 
+      </p>
+      <h3>El Rincón Orgánico</h3>
+      <p>
+        En 1989, María y Pipo vendieron su campo y, con el deseo acercar lo orgánico a la gente, fundaron El Rincón Orgánico (ERO). Para entonces, la distribución de productos se había ampliado a tiendas especializadas, hoteles, restaurantes y a cientos de hogares gracias al delivery personalizado.  \
+      </p>
+
+      <h3>Años de siembra</h3>
+      <p>
+        En 1990, María y Pipo trasladaron toda su experiencia y energía a “San Genaro”, un establecimiento agropecuario en Ranchos, provincia de Buenos Aires. Allí producían carne vacuna, cereales, huevos de gallina Araucana y zapallos hokkaidos para exportación. 
+      </p>
+      <p>
+        Además, comenzaron a trabajar con instituciones como IASCAV y SENASA*, y fundaron organizaciones para el desarrollo de la producción orgánica**. ERO participó en ferias nacionales e internacionales, y lanzó el servicio de organización de eventos y catering gastronómico. 
+      </p>
+      <p>
+        En 1996, con enorme alegría, abrieron las puertas del almacén y biobar en Gurruchaga 1001, en el barrio porteño de Villa Crespo. Después de quince años en esa bella esquina, ERO se mudó al barrio que lo vio nacer, Almagro, renovó su imagen e inauguró su nuevo BioBar-Almacén, en Bulnes 910. 
+      </p>
+      <h3>Un nuevo milenio</h3>
+      <p>
+        En 2000, ERO comenzó a asesorar a profesionales gastronómicos, chefs y restaurantes. Además, brindó cursos y talleres en institutos gastronómicos y en universidades de la Argentina, Brasil y el Perú. 
+      </p>
+      <p>
+        Desde el 2004, el área de exportación se desarrolló a paso firme. Ese año, además, María viajó a Washington DC, Estados Unidos, para recibir el Premio Espíritu Orgánico, otorgado por International Foundation for Organic Agriculture (IFOAM).
+      </p>
+      <h3>ERO, hoy</h3>
+      <p>
+        El planeta y sus crisis nos están demostrando que es necesario un cambio. Creemos que lo orgánico es mucho más que una tendencia, y, desde nuestro lugar, trabajamos para que lo sustentable se convierta en una elección de vida. 
+      </p>
+      <p>
+        Por eso, junto con productores de todo el país y de la región, ofrecemos en la Argentina y al mundo un variedad de alimentos certificados, y de productos y servicios relacionados. 
+      </p>
+      <p>
+        Desde nuestros inicios, estamos atentos a las necesidades de nuestros clientes, los escuchamos y tratamos de acompañarlos. Ellos son los mejores contralores de nuestra calidad.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<% content_for :slider do %>
+ <%= image_tag 'content/qs/banner.jpg' %>
+<% end %>	
+
+
+
+<% content_for :right_banner do %>
+  <%= sidebanner_join(
+    testimonial_banner_slats(1) <<
+    certification_banner_slats(1) <<
+    blog_banner_slats(1) <<
+    cv_banner_slats()
+    )
+  %>   
+<% end %>	

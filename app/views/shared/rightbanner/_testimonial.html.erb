@@ -1,0 +1,5 @@
+<div class="slat sidebar testimonial light-shadow">
+  <h3><%= link_to 'Testimonio', testimonies_path %></h3>
+  <p><%= truncate(x.description, length: 150) %></p>
+  <%= link_to 'Ver Testimonio', testimonies_path, :class => 'more' %>
+</div>

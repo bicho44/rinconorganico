@@ -1,0 +1,6 @@
+<div class="slat sidebar recipe light-shadow">
+  <h4>Recetas</h4>
+  <h3><%= link_to x.title, x %></h3>
+  <%= link_to(image_tag(x.picture.thumb('156x117')), x) %>
+  <%= link_to 'Ver Receta', x, :class => 'more' %>
+</div>
