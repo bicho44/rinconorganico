@@ -1,0 +1,17 @@
+.product-details {
+  display: block;
+  margin-top: 15px;
+  background-image: image-url('content/productos/product_leaf.png');
+  background-repeat: no-repeat;
+  min-height: 360px;
+  padding: 30px;
+  padding-bottom: 0;
+  .category-title {
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: normal;
+  }
+}
+.related-stuff {
+  margin-top: 20px;
+}

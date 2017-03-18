@@ -1,0 +1,58 @@
+@import '../globals/_all.css.scss';
+
+.cart {
+  margin-bottom: 30px;
+  .cart-table {
+    display: block;
+    .total {
+      float: right;
+      margin-top: 15px;
+      margin-right: 10px;
+      font-size: 16px;
+      display: inline-block;
+      clear: both;
+    }
+    .link {
+      /*display: block;
+      text-align: right;
+      margin-right: 10px;
+      float: right;
+      clear: both;*/
+    }
+  }
+  .actions {
+    display: block;
+    margin-top: 30px;
+  }
+  .checkout {
+    padding: 15px 30px;
+    background-color: $dark-green;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+  .continue {
+    float: left;
+    margin-right: 40px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 15px;
+  }
+}
+.cart.summary {
+  float: right;
+  width: 360px;
+  .checkout-table {
+    font-size: 12px;
+  }
+  .l-button {
+    float: right;
+    margin-top: 15px;
+  }
+}
+.form-pane {
+  float: left;
+}

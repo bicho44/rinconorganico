@@ -1,0 +1,38 @@
+//Notas mas leidas, cuadrado verde
+
+.related-note{
+  float: left;
+  height: 100px;
+  overflow:hidden;
+  margin-bottom: 7px;
+  // display:inlines;
+  box-shadow: 0 5px 15px 0 #CCC;
+  background-color: #d5db5d;
+  position:relative;
+  padding: 8px;
+  margin-top: 7px;
+  >.title{
+    text-transform:uppercase;
+    font-size: 15px;
+    a:HOVER {color: black}
+  }
+  >.description{
+    color:gray;
+    font-size: 13px;
+    font-family: Arial;
+  }
+  >.more{
+    color: #FFF;
+    float: right;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 14px;
+  }
+}
+.l-stacked .related-note {
+  width: 30%;
+  margin-left: 10px;
+  &:FIRST-CHILD {margin-left: 0;}
+  >.description {margin-top: 0px;}
+}

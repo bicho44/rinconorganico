@@ -1,0 +1,83 @@
+@import '../globals/_all.css.scss';
+.poster{
+  display:block;
+  width:762px;
+  margin-bottom:30px;
+  padding: 6px 6px 0;
+  background-color: #F0F0F0;
+  border: solid 2px #DDD;
+  margin-left: auto;
+  margin-right:auto;
+  position:relative;
+  .transparent-text{
+    width: 762px;
+    display:block;
+    top:10px;
+    position:absolute;
+    >.title{
+      word-spacing: -4px;
+      margin-top: 4px;
+      margin-left: 20px;
+      margin-bottom: 40px;
+      font-size: 29pt;
+      line-height: 50px;
+      font-family: $headings_font;
+      a {color: black;}
+    }
+    >.description{
+      margin-left:10px;
+      margin-right: 10px;
+      strong{font-weight: bold}
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    >.more{
+      font-family: 'aracne_regularregular';
+      font-size: 17px;
+      position: absolute;
+      bottom: 5px;
+      right: 30px;
+      color:black;
+    }
+  }
+}
+
+.poster.talleres{ //Home
+  .transparent-text{
+    background: rgba(200,200,255,0.5);
+    >.title{
+      font-family:aracne_regularregular;
+      margin-bottom:5px;
+    }
+  }
+}
+
+.poster.servicios{
+  .transparent-text{
+    top:5px;
+    z-index:10;
+  }
+}
+
+.poster.delivery .transparent-text {
+  background: rgba(213,219,93,0.7);
+  .more {color: black;}
+}
+.poster.biobar .transparent-text {
+  background: rgba(243,233,101,0.5);
+  .more {color: black;}
+}
+.poster.almacen .transparent-text {
+  background: rgba(250,220,20,0.6);
+  .more {color: black;}
+}
+.poster.catering .transparent-text {
+  background: rgba(190,39,45,0.6); 
+  color: white;
+  .more,  {color: white;}
+}
+.poster.exportacion .transparent-text {
+  background: rgba(87,180,141,0.5); 
+  color: white;
+  .more {color: white;}
+}

@@ -1,0 +1,46 @@
+@import '../globals/_all.css.scss';
+$shifting: 10px;
+
+.leaf-box{
+  height: 227px;
+  // border:solid 1px red;
+  padding-top: 10+$shifting;
+  padding-bottom: 30px;
+  font-family: 'aracne_regularregular';
+  background-repeat: no-repeat;
+  font-size: 18px;
+  color: $dark-gray;
+  &.leaf {background-position: 50% 50%;}
+  &.leaf.left{
+    float:left;
+    width: 427px;
+    background-image: image-url('content/productos/leaf_left.png');
+    >.inner{
+      float:right;
+      width: 350px;
+      margin-right: $shifting;
+    }
+  }
+  &.leaf.right{
+    float:right;
+    background-image: image-url('content/productos/leaf_right.png'); 
+    width: 319px;
+    height: 209px;
+    margin-right: 20px;
+    >.inner{
+      float:left;
+      width: 310px;
+      margin-left:$shifting;
+    }
+  }
+  &.leaf:nth-child(4n+1) {
+    width: 320px;
+    background-image: image-url('content/productos/leaf_left_bottom.png');
+    >.inner {margin-right: 0px;width: 340px;}
+  }
+  &.leaf:nth-child(4n+2) {
+    background-image: image-url('content/productos/leaf_right_bottom.png');
+    width: 410px;
+    margin-right: 0px;
+  }
+}

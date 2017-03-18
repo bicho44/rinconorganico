@@ -1,0 +1,40 @@
+@import '../globals/_all.css.scss';
+
+.search{
+  margin-top: 7px;
+  margin-bottom: 7px;
+  color: $dark-green;
+  &.inline {display: inline;}
+  label {
+    display: inline-block;
+    margin-right: 4px;
+    font-family: "aracne_regularregular";
+    font-size: 20px;
+    line-height: 7px;
+  }
+  input[type=text]{
+    height:20px;
+    border: 1px solid $light-green;
+    &:hover, &:focus{
+      border-color:darken(yellow,15%);
+    }
+  }
+  input[type=submit]{
+    background:image-url('shared/search-go.png');
+    text-indent:-999em;
+    width: 29px;
+    height: 27px;
+    border:none;
+    cursor:pointer;
+  }
+
+  &.products {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+  }
+}
+
+.search.short{
+  input[type=text]{width: 120px;}
+}

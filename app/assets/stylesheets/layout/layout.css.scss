@@ -1,0 +1,385 @@
+@import '../globals/_all.css.scss';
+
+//Layout?
+
+.l-clear{clear:both;}
+.l-stacked >*{display:inline;}
+.l-title-home{
+  font-family: hand_of_seanregular;
+  font-size:37px;
+  font-weight:lighter;
+  width:100%;
+  background: image-url('content/home/title-leaf.png') no-repeat;
+  background-position: right bottom;
+  &.talleres {margin-top: 20px;}
+}
+
+.l-home-products{
+  position: relative;
+  z-index: 50;
+  padding:10px;
+}
+
+.l-title-secondary{
+  color:darken(red,15%);
+  text-transform:uppercase;
+}
+
+.l-right-dashed{  
+  border-right: dashed 1px #CCC;
+}
+
+.l-twocolumns{
+  -moz-column-count: 2; 
+  -moz-column-gap: 40px; 
+  -moz-column-rule: 1px solid black; 
+  -webkit-column-count: 2; 
+  -webkit-column-gap: 40px; 
+  -webkit-column-rule: 1px dashed #AAA;
+  //Polyfill http://css.4design.tl/polyfills-fallbacks-html5
+  //http://www.csscripting.com/js/v1.0beta/css3-multi-column.js
+}
+
+.l-white{
+  background-color:white;
+}
+
+.l-outer {
+  width: 1004px;
+  margin: 0 auto;
+}
+
+.l-inner {
+  float: left;
+  width: 100%;
+  border-top: none;
+  margin-bottom: 40px;
+}
+
+.l-lefty {
+  float: left;
+}
+
+.l-center{
+  text-align:center;
+}
+
+.l-righty {
+  float: right;
+}
+
+.l-hdr {
+	float: left;
+  width: 100%;
+  height: 90px;
+  position: relative;
+  z-index: 200;
+  background-color: white;
+  a#logo {
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    width: 430px;
+    height: 90px;
+    overflow: hidden;
+    z-index: 100;
+    img {
+    	margin-left: 0px;
+    	margin-top: -105px;
+    }
+  }
+  .l-hdr_right {
+  	position: absolute;
+  	top: 0px;
+  	right: 0px;
+  	width: 700px;
+  }
+}
+
+.l-menu {
+	ul {
+		li {
+			float:left;
+    	list-style-type: none;
+    	a {
+    		color: inherit;
+    	}
+		}
+	}
+}
+
+.l-bottom-link {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.l-userlinks {
+  background-color: $dark-green;
+  padding-top: 10px;
+  height:20px;
+  width: 100%;
+  font-size: 12px;
+  color:white;
+  ul {
+    float:right;
+    margin-right:10px;
+    li {
+	  	margin-left:20px;
+	  	a {
+	  		color:white;
+	    	text-decoration:none;
+	    	&:HOVER {text-decoration: underline;}
+	    	span.icon {
+	    		float:right;
+				  margin-left: 5px;
+				  margin-top:-5px;
+				  background: url(image_path('layout/header-icons.png'));
+				  width:21px;
+				  height:20px;
+				  &.register {background-position: -26px 0}
+			  	&.newsletter {background-position: -49px 0}
+				  &.facebook {background-position: -69px 0;float:left;}
+	    	}
+        &.basket {color: orange; font-weight: bold;}
+	  	}
+	  }
+  }
+}
+
+.l-primary_nav {
+  margin-top: 1px;
+  height: 59px;
+  width: 100%;
+  ul{
+    text-align: right;
+    padding-right: 28px;
+
+    &.top {
+      background-color: $light-green;
+      height: 23px;
+      padding-top: 10px; 
+      font-size: 16px; 
+    }
+
+    &.bottom {
+      background-color: $greenish-yellow;
+      height: 21px;
+      padding-top: 4px;
+      font-size: 14px;
+      line-height: 26px;
+    }
+
+    li{
+      margin-left:10px;
+      float: none;
+      display: inline;
+      a{
+		    color: $dark-green;
+		    text-decoration: none;
+		    &:HOVER {text-decoration: underline};
+        &.active {font-weight: bold;}
+		  }
+    }
+  }
+}
+
+.l-slider {
+	float:left;
+  width:100%;
+  height: 294px;
+  background-color: white;
+  position: relative;
+  z-index: 100;
+}
+
+.l-main {
+	float: left;
+	width: 100%;
+	background: url(image_path('layout/body.jpg'));
+}
+
+.l-outer_content {
+	float: left;
+	width: $content-width;
+	padding: 20px;
+  padding-top: 5px;
+}
+
+.l-inner_content {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.l-sidebar {
+	float: right;
+  width: 176px;
+  margin: 0;
+  padding: 10px 6px;
+  background-color: $dark-green;
+  img{
+  }
+}
+
+.l-divider {
+  display: block;
+  height: 1px;
+  border-bottom: 1px dashed rgba(170, 170, 170, 0.4);
+  margin-bottom: 7px;
+}
+
+.l-dots-divider {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 8px;
+  background-image:image-url('shared/dots.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+}
+
+.l-bottom-shadow {
+  @include drop-shadow(0, 10px, 20px, -15px, 1);
+  &.deeper {@include drop-shadow(0, 10px, 20px, -10px, 1);}
+}
+
+/* Ver si este menu conviene pasarlo a un modulo */
+.l-extensible_menu {
+	float: left;
+	width:100%;
+  font-family: "aracne_regularregular";
+  margin-top: -4px;
+  ul {
+    li {
+		  position: relative;
+		  width: 151px;
+		  margin-right: 5px;
+		  padding-top: 2px;
+      padding-bottom: 3px;
+		  font-size:15px;
+		  text-align: center;
+		  box-shadow: 0px 0px 9px rgba(34, 34, 34, 0.3);
+		  &:HOVER .extensible {display: block;}
+		  &:nth-child(5n) {margin-right: 0;}
+		  /* Esto quedo feo, compactar un poco */
+		  &.quienes, &.quienes .extensible{background-color: $light-green;}
+		  &.bar, &.bar .extensible{background-color: $greenish-yellow;}
+		  &.almacen, &.almacen .extensible{background-color: $eggish-yellow;}
+		  &.catering, &.catering .extensible{
+		    background-color:$angry-red;
+		    .text {color: white;}
+		  }
+		  &.exportacion, &.exportacion .extensible{
+		    background-color:$shy-turquoise;
+		    .text {color: white;}
+		  }
+		  a {text-decoration: none;}
+		}
+  }
+}
+
+.l-extensible_menu {
+	.extensible {
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 100%;
+    z-index:100;
+    display:none;
+    >img {width: 100%;}
+  }
+  .divisor{
+  	display:block;
+  	height:2px;
+  	background-color:#F8F1E9;
+  	width:100%;
+  }
+  .text {
+    display:block;
+    padding:5px 12px;
+    font-family: "Calibri", Georgia;
+    font-style: italic;
+    font-size: 12px;
+    text-align:left;
+    line-height: 11px;
+    min-height: 24px;
+  }
+  span.title {
+    display: block;
+		padding: 11px 0px;
+    font-size: 18px;
+    line-height: 18px;
+        
+    &.tall {padding: 2px 0px;}
+  }
+  .mini {
+    display: inline-block;
+    margin-top: -25px;
+    transition: margin-top 0.25s linear;
+    &:HOVER {
+      margin-top: 0px;
+    }
+    li > a {
+      opacity: 0.1;
+      transition: visibility 0.25s ease-in;
+      transition: opacity 0.25s ease-in;
+    }
+    &:HOVER li > a {
+      opacity: 1;
+    }
+  }
+}
+
+.l-title {
+  margin-top: 7px;
+  font-family: "aracne_regularregular";
+  font-size: 28px;
+  font-weight: normal;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed rgba(170, 170, 170, 0.4);
+  padding-bottom: 3px;
+}
+
+.l-footer{
+  float:left;
+  background: url(image_path('layout/footer.png'));
+  background-position:1px 0;
+  height:200px;
+  width:100%;
+  margin-top: -23px;
+}
+
+.l-button {
+  padding: 5px 10px;
+  background-color: $dark-green;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  &.l-button-big {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}
+
+//Esto es feo!
+body[data-action="home"]{
+  .extensible{
+    /*display:inline;*/
+  }
+  #content{margin-top:150px;}
+}
+
+//Esto se usa en recetas y en el blog
+.l-7030{
+  >.first{
+    width:75%;
+    float:left;
+  }
+  >.second{
+    width: 24%;
+    float:right;
+  }
+}

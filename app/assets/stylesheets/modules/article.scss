@@ -1,0 +1,74 @@
+@import '../globals/_all.css.scss';
+.article{
+  display: block;
+  padding: 20px 40px;
+  >.title{
+    color:$dark-green;
+    font-family: 'aracne_regularregular';
+    margin-bottom:15px;
+    font-size: 27px;
+  }
+  >.picture{
+    margin-right: 20px;
+    padding-bottom: 6px;
+    float:left;
+    position:relative;
+    >.watermark{
+      position:absolute;
+      top:-4px;
+      left:-4px;
+      width:46px;
+      height:42px;
+      background: image-url('shared/watermark_46x42.png');
+    }
+  }
+  >.description{
+    font-size:13px;
+    color:gray;
+    text-align:justify;
+    font-family: Arial;
+    p + p{ margin-top: 1em;}
+    // text-indent: 1em;
+  }
+  h3 {margin-top: 15px;margin-bottom: 7px;}
+  li {list-style-position: inside;}
+}
+
+.article.testimony{
+  .quot-mark{
+      width: 36px;
+      height: 28px;
+      float: left;
+      margin-left: -36px;
+      background: image-url('shared/quotmark.png');
+      margin-top: -11px;
+    }
+  >.divisor{
+    background:image-url('shared/divisor-bottom.png');
+    width: 42px;
+    height: 15px;
+    display:block;
+    margin: 0 auto;
+    margin-top:15px;
+  }
+  &:last-child >.divisor{display:none;}
+}
+
+.article.certifications{
+  width: 720px;
+  padding: 20px;
+  margin-bottom: 20px;
+  >.leaf{
+    height:60px;
+  }
+
+}
+
+.article.media {
+  display: inline-block;
+  padding-bottom: 0;
+}
+.article .related-stuff {
+  font-size: 14px;
+  h3 {font-size: 16px;}
+}

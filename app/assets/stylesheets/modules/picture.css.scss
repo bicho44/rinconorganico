@@ -1,0 +1,55 @@
+.picture{
+  display:block;
+  position:relative;
+  >.watermark{
+    position:absolute;
+    top:-6px;left:-6px;
+    background: image-url('shared/watermark_46x42.png');
+    width: 46px;
+    height: 42px;
+  }
+}
+
+.picture.product{
+  >.price{
+    >.price{
+      position:absolute;
+      bottom: 8%;
+      right:0;
+      color:white;
+      font-size:30px;
+      width:65%;
+      text-align:right;
+      background-color: #f9dc14;
+      padding-right: 7px;
+    }
+  }
+  &.mini{
+    >.price{font-size: 32px;}
+    >.watermark{
+      top:-6px;left:-6px;
+      background: image-url('shared/watermark_31x28.png');
+      width: 31px;
+      height: 28px;
+    }
+  }
+  &.small{
+    >.price{font-size: 32px;}
+    >.watermark{
+      top:-6px;left:-6px;
+      background: image-url('shared/watermark_46x42.png');
+      width: 46px;
+      height: 42px;
+    }
+  }
+  &.bigger{
+    >.price{font-size:50px;}
+    >.watermark{
+      top:-10px;
+      left:-8px;
+      background: image-url('shared/watermark_72x66.png');
+      width: 72px;
+      height: 66px;
+    }
+  }
+}

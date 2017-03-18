@@ -1,0 +1,15 @@
+@import '../globals/_all.css.scss';
+.flap{
+  position: relative;
+  display:block;
+  width: 196px;
+  padding: 8px;
+  margin:auto;
+  text-align:center;
+  background-color:$eggish-yellow;
+  font-family: aracne_regularregular;
+  font-size:17px;
+  margin-bottom: -33px;
+  color: $dark-gray;
+  &:hover{color:black;}
+}

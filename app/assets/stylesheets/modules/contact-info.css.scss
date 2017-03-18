@@ -1,0 +1,18 @@
+@import '../globals/_all.css.scss';
+.contact-info{
+  display: block;
+  color: white;
+  font-family: 'aracne_regularregular';
+  font-size: 19px;
+  line-height: 26px;
+  margin-bottom: 7px;
+  span {
+    width: 17px;
+    height: 23px;
+    float: left;
+    background-image: image-url('layout/phones.png');
+    margin-right: 3px;
+    &.mobile {background-position: 0px -22px;}
+  }
+  > a {color: white;}
+}

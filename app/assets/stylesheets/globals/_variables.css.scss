@@ -1,0 +1,52 @@
+// _VARIABLES.SCSS
+// Variables used across multiple stylesheets
+// --------------------------------------------------------------------------
+
+// Tip: if a variable is only used by a single module, define it inside that
+// module. Reserve globals/_variables.scss for things that are truly global.
+
+
+// TYPOGRAPHY
+// ----------
+
+// Tip: use shorthand names like $serif and $sans-serif for font stacks to
+// keep stylesheets DRY and allow easy changes to fonts in the future.
+
+// $serif: Georgia, serif;
+// $sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Tip: define a concise array of font sizes that are used throughout your
+// stylesheets to keep your typography consistent. For example this is a
+// "golden scale" of five sizes that work well together, generated using
+// http://www.pearsonified.com/typography/
+
+// $title-font-size: 42px;
+// $headline-font-size: 26px;
+// $sub-headline-font-size: 20px;
+// $base-font-size: 16px;
+// $small-font-size: 13px;
+
+//Layout
+$dark-green : #105D27;
+$green-dark: $dark-green;
+$light-green: #D5DB5D;
+$smoke-green: #709E7D;
+$greenish-yellow: #F3E965;
+$eggish-yellow: #FADC14;
+$angry-red: #BE272D;
+$shy-turquoise: #57B48D;
+$sky-blue: #009DDF;
+$light-blue: #5abfe9;
+$light-gray: #58585A;
+$normal-gray: #848587;
+$dark-gray: #1A171B;
+$silver: #AAAAAA;
+$orange: #EE8A33;
+$soft-yellow: #f3e965;
+
+$content-min-height: 500px;
+$content-width: 776px;
+
+
+$verdana_family: Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;
+$headings_font: "aracne_regularregular";

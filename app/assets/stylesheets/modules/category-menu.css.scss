@@ -1,0 +1,56 @@
+@import '../globals/_all.css.scss';
+.category-menu{
+  margin-top:5px;
+  padding: 5px 10px;
+  background-color: $eggish-yellow;
+  position: relative;
+  >li{
+    //max-width: 80px;
+    position: relative;
+    vertical-align: text-top;
+    display:inline-block;
+    background: image-url('shared/white-seed.png') no-repeat 0px 4px;
+    padding-left: 13px;
+    margin-left: 10px;
+    color:black;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    >a{
+      color:black;
+      text-transform: uppercase;
+      font-size: 14px;
+      &:hover{color:#444}
+    }
+    &.current >a{color:white}
+    &:FIRST-CHILD {margin-left: 0px;}
+    &:HOVER {
+      .submenu {
+        display:block;
+        z-index:100;
+      }
+    }
+  }
+  &:hover .submenu li{
+    display:block;
+    >a:hover {color: #444;}
+  }
+  .submenu {
+    position: absolute;
+    display: none;
+    top: 15px;
+    left: 0px;
+    background-color: $eggish-yellow;
+    >li {
+      padding: 5px 15px;
+      font-size: 13px;
+      &:FIRST-CHILD {margin-top: 5px};
+      >a {color: black;min-width: 100px;}
+    }
+  }
+  /*.submenu>li{
+    position:relative;
+    display:none;
+    font-size: 11px;
+  }*/
+}

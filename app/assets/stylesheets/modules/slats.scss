@@ -1,0 +1,135 @@
+@import '../globals/_all.css.scss';
+$slat-padding: 10px;
+$default-slat-width: $content-width - (2*$slat-padding);
+
+//SLAT MODULE
+
+.slat{
+  img{display:block;}
+  // overflow:hidden;
+  //width:$default-slat-width;
+  padding:10px;
+  // font-family:$headings_font;
+  &.white{background-color:white;}
+  &.semitransparent{background-color: rgba(255,255,255,0.5);}
+  &.light-shadow {box-shadow: 0px 0px 4px 0 #AAA;}
+  >.block{float:left;}
+  >.description {font-family: Arial;}
+}
+.slat-shadow{
+  box-shadow: 1px 1px 15px 0 #AAA;
+  //width: ($default-slat-width - 2); //por el border
+}
+
+.slat.product{
+  margin-top:10px;
+  overflow:hidden;
+}
+
+.slat.delivery {
+  padding: 20px 40px;
+}
+
+.slat.summary{
+  position:relative;
+  >.title{
+    color:$dark-green;
+    font-size:20px;
+  }
+  >.picture{
+    float:left;
+    padding-right:10px;
+  }
+  >.description{
+    font-size:13px;
+    color:gray;
+  }
+  >.more{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    margin-right: 10px;
+    color:$dark-green;
+    font-size:16px;
+  }
+  &.red{ >.more, >.title{color:$angry-red;} }
+  &.orange{ >.more, >.title{color:$orange;} }
+  &.blue{ >.more, >.title{color:$light-blue;}}
+}
+
+
+.slat.summary.recipe{
+  >.description{
+    float:left;
+    width:60%;
+  }
+  >.picture{
+    margin-top: -25px;
+    margin-right:0;
+    float:right;
+  }
+  >.more{
+    margin-right: 10px;
+    font-size: 12px;
+    color: $light-blue;
+  }
+}
+
+.slat.summary.blog{
+  >.date{
+    color:$dark-green;
+    font-size:11px;
+  }
+  >.title{margin-bottom:10px;}
+  >.picture{
+    float:right;
+    padding: 3px;
+    margin-left: 3px;
+  }
+  >.more{
+    font-size:11px;
+    color: $light-blue;
+  }
+}
+
+.slat.sidebar {
+  width: auto;
+  padding: 10px;
+  background-color: white;
+  padding-bottom: 0px;
+  margin-bottom: 7px;
+  font-family: $headings_font;
+  h4 {
+    color:$normal-gray;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  h3 {
+    font-weight: bold;
+    color: $angry-red;
+    font-size: 18px;
+    margin-top: 4px;
+    margin-bottom: 7px;
+    a {color: $angry-red;}
+  }
+  p {
+    font-size: 12px;
+    color: $normal-gray;
+    font-family: 'MyriadPro-Regular';
+  }
+  >.more{
+    display: block;
+    font-size:17px;
+    text-align:right;
+    color:white;
+    background-color:$smoke-green;
+    margin: 5px -10px;
+    margin-bottom: 0;
+    padding: 5px;
+  }
+  .icon {
+    display: block;
+    text-align: right;
+    img {display: inline-block;}
+  }
+}

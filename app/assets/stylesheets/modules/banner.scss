@@ -1,0 +1,60 @@
+@import '../globals/_all.css.scss';
+
+.banner {
+  display: block;
+  height: 294px;
+  position: relative;
+  >h2 { 
+    color: #604C3F;
+    font-family: $headings_font;
+    font-size: 40px;
+    font-weight: normal;
+    padding: 10px 15px;
+    height: 45px;
+    position: relative;
+  }
+  img.background {
+    position: absolute;
+    top: 0; left: 0;
+  }
+
+  &.note {
+    >h2 {
+      background-color: rgba(255,255,255,0.65);
+      span {color: #604C3F;}
+    }
+  }
+  &.recipe {
+    >h2 {
+      background-color: rgba(255,255,255,0.65);
+      span {color: #604C3F;}
+    }
+    .inner {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      background-color: rgba(255, 255, 255, 0.65);
+      width: 100%;
+    }
+
+    .slat-product {
+      height: auto;
+      color: #604C3F;
+      display: inline-block;
+      width: 940px;
+      margin: 10px;
+      margin-left: 50px;
+      > .title {font-family: $headings_font;  font-size:40px; font-weight: normal;}
+      > p {font-family: $verdana_family; font-size: 11px;}
+    }
+  }
+  &.product {
+    >.leaf-box.leaf {
+      float:none; margin-left: 230px;
+      .slat-product {
+        height: auto;
+        >.more {position: relative;bottom: 0;}
+      }
+    }
+  }
+}

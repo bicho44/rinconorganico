@@ -1,0 +1,78 @@
+@import '../globals/_all.css.scss';
+.l-footer{position:relative;}
+.l-footer .sitemap{
+  position:absolute;
+  top:100px;
+  left:285px;
+  >.title{
+    font-family:poiret_oneregular;
+    font-size: 20px;
+    color:white;
+    font-weight: normal;
+  }
+  width:400px;
+  ul{
+    -webkit-column-count: 4;
+    margin-top: 5px;
+  }
+  li, >.item{
+    list-style-type: none;
+    font-size: 12px;
+    a{
+      color:white;
+      &:hover{text-decoration: underline}
+    }
+  }
+
+}
+
+.l-footer .contact{
+  position:absolute;
+  top:100px;
+  left:700px;
+  color:white;
+  font-size: 10px;
+  >.notice{
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 89px;
+    font-size: 12px;
+    color: yellow;
+    display:none;
+  }
+  >.title{
+    font-family: poiret_oneregular;
+    font-size: 20px;
+    float:left;
+    margin-right:10px;
+  }
+  >input[type=text], textarea{
+    height:17px;
+    float: right;
+    width: 200px;
+    border: solid 1px #FFF;
+    margin-bottom: 2px;
+    padding: 2px;
+    color: #FFF;
+    background-color: rgba(240, 240, 240, 0.6);
+    font-family: inherit;
+    line-height: 24px;
+    font-size: 11px;
+  }
+  textarea{height:25px;}
+  >.submit{
+    border:none;
+    background:none;
+    color:inherit;
+    font-size:12px;
+    font-family: inherit;
+    float:right;
+    clear:both;
+    cursor:pointer;
+    &:hover{text-decoration: underline}
+  }
+  input::-webkit-input-placeholder{color:white;}
+  input::-moz-placeholder{color:white;}
+  input:-moz-placeholder{color:white;}
+  input:-ms-input-placeholder{color:white;}
+}

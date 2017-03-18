@@ -1,0 +1,71 @@
+@import '../globals/_all.css.scss';
+.delivery {
+  position: relative;
+  .title {
+    font-family: 'aracne_regularregular';
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    line-height: 27px;
+    &.green {color:$dark-green;margin-bottom: 20px;}
+  }
+  p {
+    font-size: 14px;
+    color: $light-gray;
+  }
+  span {
+    &.bigger{
+      font-size: 21px;
+      display: inline;
+    }
+  }
+  .quote {
+    img {display: inline;}
+    margin-right: 5px;
+    &.inverted {margin-left: 5px;}
+  }
+
+  .signature {
+    text-align: right;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-size: 13px;
+  }
+  .map {
+    position: absolute;
+    top: 330px;
+    right: 50px;
+  }
+}
+
+.delivery .medios {
+  margin-top: 30px;
+  li {
+    list-style: none;
+    font-size: 19px;
+    margin-bottom: 30px;
+    display: block;
+    padding-left: 110px;
+    position: relative;
+    color: $light-gray;
+    .icon {
+      position: absolute;
+      left: 10px;
+      top: 0px;
+      background-image: image-url('content/delivery/icons.png');
+      background-position: 0px 0px;
+      width: 58px;
+      height: 55px;
+      background-repeat: no-repeat;
+      &.cart {top: -7px;}
+      &.cell {top: -10px;background-position: 0px -75px;height: 65px;}
+      &.mail {top:-7px;background-position: 1px -167px;height: 42px;}
+      &.pin {top:-4px;background-position: 0px -229px;}
+    }
+    .sub {
+      font-family: 'aracne_regularregular';
+      font-size: 27px;
+      line-height: 20px;
+    }
+  }
+}

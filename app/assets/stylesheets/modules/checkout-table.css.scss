@@ -1,0 +1,17 @@
+@import '../globals/_all.css.scss';
+
+.checkout-table{
+  width: 100%;
+  font-size: 13px;
+  .titles>*{
+    text-align: left;
+  }
+  thead th {border-bottom: 1px dashed #AAA;}
+  .content>*{
+    vertical-align: middle;
+    &.title{color:$smoke-green;}
+    .button.destroy{color:$angry-red;}
+  }
+  .image a {display: block;}
+  .qty input {border: 1px solid silver; text-align: center;}
+}
